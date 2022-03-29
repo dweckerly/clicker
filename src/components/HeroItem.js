@@ -1,4 +1,4 @@
-import { Image, StyleSheet, View, Text } from "react-native";
+import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Classes from "../data/Classes";
 import { whiteText } from "../../shared/styles";
 
@@ -10,23 +10,25 @@ const HeroItem = ({hero}) => {
                 <View style={styles.header}>
                     <Text style={[whiteText, styles.name]}>{hero.name}</Text>                    
                 </View> 
-                <View>
-                    <View style={styles.stats}>
-                        <View style={styles.stat}>
-                            <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
-                            <Text style={[whiteText, styles.statFont]}>{hero.stats.hp}</Text>
-                        </View>
-                        <View style={styles.stat}>
-                            <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
-                            <Text style={[whiteText, styles.statFont]}>{hero.stats.might}</Text>
-                        </View>
-                        <View style={styles.stat}>
-                            <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
-                            <Text style={[whiteText, styles.statFont]}>{hero.stats.magic}</Text>
-                        </View>                                                            
-                    </View>  
-                </View>                                         
-            </View>             
+                <View style={styles.stats}>
+                    <View style={styles.stat}>
+                        <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
+                        <Text style={[whiteText, styles.statFont]}>{hero.stats.hp}</Text>
+                    </View>
+                    <View style={styles.stat}>
+                        <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
+                        <Text style={[whiteText, styles.statFont]}>{hero.stats.might}</Text>
+                    </View>
+                    <View style={styles.stat}>
+                        <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
+                        <Text style={[whiteText, styles.statFont]}>{hero.stats.magic}</Text>
+                    </View>                                                            
+                </View>                                        
+            </View> 
+            <TouchableOpacity style={styles.hireBtn}>
+                <Text style={styles.header}>HIRE</Text>
+                <Text style={styles.header}>$20</Text>
+            </TouchableOpacity>      
         </View>
     );
 }
@@ -57,10 +59,12 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     stats: {
-        justifyContent: "space-around"
+        flexDirection: "row",
+        justifyContent: "center"
     },
     stat: {
-        flexDirection: "row"
+        flexDirection: "row",
+        marginRight: 20
     },
     name: {
         fontSize: 24
@@ -76,8 +80,9 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         height: 70,
         width: 70,
-        borderRadius: 50,
-        alignContent: "center"
+        borderRadius: 10,
+        justifyContent: "center",
+        marginRight: 10
     }
 });
 
