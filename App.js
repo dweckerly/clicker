@@ -1,30 +1,23 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import HeroItem from './src/components/HeroItem';
+import { useContext, useState } from 'react';
+import { StyleSheet, View } from 'react-native';
+import HeroHireList from './src/components/HeroHireList';
+
+import { createHireableHero } from './src/hooks/useHireableHeros';
 
 export default function App() {
-  hero = {
-    "id": 2,
-    "icon": 5,
-    "name": "Guy the BAMF",
-    "level": 1,
-    "stats": {
-      "hp": 5,
-      "might": 5,
-      "magic": 5
-    }
+  let heroData = []
+  for(let i = 0; i < 10; i++) {
+    heroData.push(createHireableHero());
   }
   return (
     <View style={styles.container}>
-      <HeroItem hero={hero} />
+      <HeroHireList data={heroData} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#2e2e2e',
-    alignItems: 'center',
-    justifyContent: 'center',
   }
 });

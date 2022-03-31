@@ -4,38 +4,41 @@ import Names from "../data/Names";
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
-
+  
 function setHeroName(heroClass) {
     const maleNamesLength = Names.male.length;
-    const femaleNamesLength = Names.female.length
-    if(heroClass.gender === 'male') {
-        if(heroClass.title.placement === 'suffix') {
-            return Names.male[getRandomInt(maleNamesLength)] + heroClass.title.name;
+    const femaleNamesLength = Names.female.length;
+    const title = heroClass.titles[getRandomInt(heroClass.titles.length)];
+    if(heroClass.gender == 'male') {
+        if(title.placement == 'suffix') {
+            return Names.male[getRandomInt(maleNamesLength)] + title.name;
         }
-        else if (heroClass.title.placement === 'prefix') {
-            return heroClass.title.name + Names.male[getRandomInt(maleNamesLength)];
+        else if (title.placement == 'prefix') {
+            return title.name + Names.male[getRandomInt(maleNamesLength)];
         }
     }
-    else if (heroClass.gender === 'female') {
-        if(heroClass.title.placement === 'suffix') {
-            return Names.female[getRandomInt(femaleNamesLength)] + heroClass.title.name;
+    else if (heroClass.gender == 'female') {
+        if(title.placement == 'suffix') {
+            return Names.female[getRandomInt(femaleNamesLength)] + title.name;
         }
-        else if (heroClass.title.placement === 'prefix') {
-            return heroClass.title.name + Names.female[getRandomInt(femaleNamesLength)];
+        else if (title.placement == 'prefix') {
+            return title.name + Names.female[getRandomInt(femaleNamesLength)];
         }
     }
 }
-
-export default () => {
-    const [result, setResult] = useState({
-        data: null
-    });
-    const createHireableHeros = () => {
-        const classLength = Classes.length;
-        const classIndex = getRandomInt(classLength);
-        const heroClass = Classes[classIndex];
-        let name = setHeroName(heroClass);
-        
+  
+export function createHireableHero() {
+    const classLength = Classes.length;
+    const classIndex = getRandomInt(classLength);
+    const heroClass = Classes[classIndex];
+    return {
+        "name": setHeroName(heroClass),
+        "icon": classIndex,
+        "level": 1,
+        "stats": {
+            "hp": heroClass.stats.hp,
+            "might": heroClass.stats.might,
+            "magic": heroClass.stats.magic
+        }
     }
-    return [result, createHireableHeros];
 }

@@ -2,7 +2,7 @@ import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Classes from "../data/Classes";
 import { whiteText } from "../../shared/styles";
 
-const HeroItem = ({hero}) => {
+export default HeroItem = ({hero, handlePress}) => {
     return (
         <View style={styles.container}>
             <Image style={styles.image} source={Classes[hero.icon].icon} />
@@ -25,7 +25,7 @@ const HeroItem = ({hero}) => {
                     </View>                                                            
                 </View>                                        
             </View> 
-            <TouchableOpacity style={styles.hireBtn}>
+            <TouchableOpacity style={styles.hireBtn} onPress={handlePress}>
                 <Text style={styles.header}>HIRE</Text>
                 <Text style={styles.header}>$20</Text>
             </TouchableOpacity>      
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         marginRight: 20
     },
     name: {
-        fontSize: 24
+        fontSize: 20
     },
     uiImage: {
         height: 20,
@@ -85,5 +85,3 @@ const styles = StyleSheet.create({
         marginRight: 10
     }
 });
-
-export default HeroItem;

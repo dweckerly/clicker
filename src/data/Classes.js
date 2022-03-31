@@ -4,10 +4,20 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/barbarian.png"),
         'gender': 'male',
-        'title': {
-            'placement': 'suffix',
-            'name': ' the Barbarian'
-        },
+        'titles': [
+            {
+                'placement': 'suffix',
+                'name': ' the Barbarian'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' the Brute'
+            },
+            {
+                'placement': 'prefix',
+                'name': 'Wildman '
+            },
+        ],
         'stats': {
             'hp': 4,
             'might': 6,
@@ -23,10 +33,16 @@ const Classes = [
         'description': "A stout warrior race that lives in deep mountain tunnels.",
         'icon': require("../assets/icons/classes/dwarf.png"),
         'gender': 'male',
-        'title': {
-            'placement': 'suffix',
-            'name': ' the Dwarf'
-        },
+        'titles': [
+            {
+                'placement': 'suffix',
+                'name': ' the Dwarf'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' of Stone'
+            },
+        ],
         'stats': {
             'hp': 5,
             'might': 4,
@@ -42,10 +58,20 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/elf.png"),
         'gender': 'female',
-        'title': {
-            'placement': 'suffix',
-            'name': ' the Elf'
-        },
+        'titles': [
+            {
+                'placement': 'suffix',
+                'name': ' the Elf'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' the Fair'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' of the Forest'
+            },
+        ],
         'stats': {
             'hp': 2,
             'might': 4,
@@ -61,10 +87,16 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/knight.png"),
         'gender': 'male',
-        'title': {
-            'placement': 'prefix',
-            'name': 'Sir '
-        },
+        'titles': [
+            {
+                'placement': 'prefix',
+                'name': 'Sir '
+            },
+            {
+                'placement': 'suffix',
+                'name': ' the Honorable'
+            },
+        ],
         'stats': {
             'hp': 4,
             'might': 5,
@@ -80,10 +112,12 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/monk.png"),
         'gender': 'male',
-        'title': {
-            'placement': 'prefix',
-            'name': 'Brother '
-        },
+        'titles': [
+            {
+                'placement': 'prefix',
+                'name': 'Brother '
+            },
+        ],
         'stats': {
             'hp': 4,
             'might': 3,
@@ -99,10 +133,12 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/nun.png"),
         'gender': 'female',
-        'title': {
-            'placement': 'prefix',
-            'name': 'Sister '
-        },
+        'titles': [
+            {
+                'placement': 'prefix',
+                'name': 'Sister '
+            },
+        ],
         'stats': {
             'hp': 3,
             'might': 3,
@@ -118,10 +154,16 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/witch.png"),
         'gender': 'female',
-        'title': {
-            'placement': 'suffix',
-            'name': ' the Witch'
-        },
+        'titles': [
+            {
+                'placement': 'suffix',
+                'name': ' the Witch'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' the Crone'
+            },
+        ],
         'stats': {
             'hp': 3,
             'might': 1,
@@ -137,10 +179,20 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/wizard.png"),
         'gender': 'male',
-        'title': {
-            'placement': 'suffix',
-            'name': ' the Wizard'
-        },
+        'titles': [
+            {
+                'placement': 'suffix',
+                'name': ' the Wizard'
+            },
+            {
+                'placement': 'suffix',
+                'name': ' the Magician'
+            },
+            {
+                'placement': 'prefix',
+                'name': 'Magi '
+            },
+        ],
         'stats': {
             'hp': 2,
             'might': 2,
