@@ -1,6 +1,6 @@
 const Quests = [
     {
-        'name': 'Terrible troublesome troll.',
+        'name': 'Terrible Troublesome Troll',
         'description': 'Defeat the troll terrorizing locals.',
         'icon': require('../assets/icons/quests/troll.png'),
         'requirements': {
@@ -13,7 +13,7 @@ const Quests = [
         'time': 1
     },
     {
-        'name': 'Big bad gnome.',
+        'name': 'Big Bad Gnome',
         'description': 'Capture a wiley gnome running amok.',
         'icon': require('../assets/icons/quests/bad-gnome.png'),
         'requirements': {
@@ -26,7 +26,7 @@ const Quests = [
         'time': 1
     },
     {
-        'name': 'Elusive sea monster.',
+        'name': 'Elusive Sea Monster',
         'description': 'A secretive sea monster is plaguing a quite seaside town.',
         'icon': require('../assets/icons/quests/sea-monster.png'),
         'requirements': {
@@ -39,7 +39,7 @@ const Quests = [
         'time': 1
     },
     {
-        'name': 'Prankster fairies.',
+        'name': 'Prankster Fairies',
         'description': 'Fairies are tricking locals out of their goods and must be stopped.',
         'icon': require('../assets/icons/quests/fairy.png'),
         'requirements': {
@@ -52,7 +52,7 @@ const Quests = [
         'time': 1
     },
     {
-        'name': 'Into the goblin caves.',
+        'name': 'Into the Goblin Caves',
         'description': 'Venture into the goblin caves and eliminate them.',
         'icon': require('../assets/icons/quests/goblin.png'),
         'requirements': {
@@ -65,7 +65,7 @@ const Quests = [
         'time': 1
     },
     {
-        'name': 'Troglodyte treasure trove.',
+        'name': 'Troglodyte Treasure Trove',
         'description': 'Recover the stolen treasure hidden deep in the troglodyte den.',
         'icon': require('../assets/icons/quests/troglodyte.png'),
         'requirements': {

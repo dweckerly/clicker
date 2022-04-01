@@ -3,6 +3,7 @@ const Classes = [
         'name': 'Barbarian',
         'description': "",
         'icon': require("../assets/icons/classes/barbarian.png"),
+        'cost': 10,
         'gender': 'male',
         'titles': [
             {
@@ -32,6 +33,7 @@ const Classes = [
         'name': 'Dwarf',
         'description': "A stout warrior race that lives in deep mountain tunnels.",
         'icon': require("../assets/icons/classes/dwarf.png"),
+        'cost': 20,
         'gender': 'male',
         'titles': [
             {
@@ -58,6 +60,7 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/elf.png"),
         'gender': 'female',
+        'cost': 30,
         'titles': [
             {
                 'placement': 'suffix',
@@ -87,6 +90,7 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/knight.png"),
         'gender': 'male',
+        'cost': 40,
         'titles': [
             {
                 'placement': 'prefix',
@@ -111,6 +115,7 @@ const Classes = [
         'name': 'Monk',
         'description': "",
         'icon': require("../assets/icons/classes/monk.png"),
+        'cost': 15,
         'gender': 'male',
         'titles': [
             {
@@ -133,6 +138,7 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/nun.png"),
         'gender': 'female',
+        'cost': 15,
         'titles': [
             {
                 'placement': 'prefix',
@@ -154,6 +160,7 @@ const Classes = [
         'description': "",
         'icon': require("../assets/icons/classes/witch.png"),
         'gender': 'female',
+        'cost': 25,
         'titles': [
             {
                 'placement': 'suffix',
@@ -178,6 +185,7 @@ const Classes = [
         'name': 'Wizard',
         'description': "",
         'icon': require("../assets/icons/classes/wizard.png"),
+        'cost': 30,
         'gender': 'male',
         'titles': [
             {

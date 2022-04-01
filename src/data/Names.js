@@ -81,10 +81,12 @@ const Names = {
     ],
     'female': [
         'Adelaide',
+        'Alice',
         'Amelia',
         'Astrid',
         'Ava',
         'Beatrix',
+        'Belle',
         'Catalina',
         'Cicilia',
         'Dorothy',
