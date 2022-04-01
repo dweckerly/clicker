@@ -1,23 +1,18 @@
-import { useContext, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import HeroHireList from './src/components/HeroHireList';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { createHireableHero } from './src/hooks/useHireableHeros';
+import { NavigationContainer } from '@react-navigation/native';
+import HeroesScreen from './src/components/screens/HeroesScreen';
+import QuestsScreen from './src/components/screens/QuestsScreen';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  let heroData = []
-  for(let i = 0; i < 10; i++) {
-    heroData.push(createHireableHero());
-  }
   return (
-    <View style={styles.container}>
-      <HeroHireList data={heroData} />
-    </View>
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Heroes" component={HeroesScreen} />
+        <Tab.Screen name="Quests" component={QuestsScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#2e2e2e',
-  }
-});

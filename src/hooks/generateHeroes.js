@@ -1,9 +1,7 @@
 import Classes from "../data/Classes";
 import Names from "../data/Names";
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
+import { getRandomInt, getRandomFloat } from './util';
   
 function setHeroName(heroClass) {
     const maleNamesLength = Names.male.length;
@@ -26,8 +24,14 @@ function setHeroName(heroClass) {
         }
     }
 }
+
+function setCost(heroClass, level) {
+    let cost = heroClass.cost;
+    cost *= level;
+    return Math.round(cost * getRandomFloat(0.8, 1.2, 3))
+}
   
-export function createHireableHero() {
+export function generateHero() {
     const classLength = Classes.length;
     const classIndex = getRandomInt(classLength);
     const heroClass = Classes[classIndex];
@@ -35,6 +39,7 @@ export function createHireableHero() {
         "name": setHeroName(heroClass),
         "icon": classIndex,
         "level": 1,
+        "cost": setCost(heroClass, 1),
         "stats": {
             "hp": heroClass.stats.hp,
             "might": heroClass.stats.might,

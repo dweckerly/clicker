@@ -1,4 +1,4 @@
-const { View, FlatList, StyleSheet } = require("react-native");
+import { View, FlatList } from "react-native";
 import { useState } from "react";
 import HeroItem from "./HeroItem";
 

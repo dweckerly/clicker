@@ -1,39 +1,30 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import Classes from "../data/Classes";
 import { whiteText } from "../../shared/styles";
 
-export default HeroItem = ({hero, handlePress}) => {
+export default QuestItem = ({quest}) => {
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={Classes[hero.icon].icon} />
+        <TouchableOpacity style={styles.container}>
+            <Image style={styles.image} source={quest.icon} />
             <View style={styles.infoContainer}>
                 <View style={styles.header}>
-                    <Text style={[whiteText, styles.name]}>{hero.name}</Text>                    
+                    <Text style={[whiteText, styles.name]}>{quest.name}</Text>                    
                 </View> 
                 <View style={styles.stats}>
                     <View style={styles.stat}>
                         <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.hp}</Text>
+                        <Text style={[whiteText, styles.statFont]}>{quest.requirements.hp}</Text>
                     </View>
                     <View style={styles.stat}>
                         <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.might}</Text>
+                        <Text style={[whiteText, styles.statFont]}>{quest.requirements.might}</Text>
                     </View>
                     <View style={styles.stat}>
                         <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.magic}</Text>
-                    </View>
-                    <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/two-coins.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.cost}</Text>
-                    </View>                                                             
+                        <Text style={[whiteText, styles.statFont]}>{quest.requirements.magic}</Text>
+                    </View>                                                            
                 </View>                                        
             </View> 
-            {/*<TouchableOpacity style={styles.hireBtn} onPress={handlePress}>
-                <Text style={styles.header}>HIRE</Text>
-                <Text style={styles.header}>$20</Text>
-    </TouchableOpacity>*/}      
-        </View>
+        </TouchableOpacity>
     );
 }
 
