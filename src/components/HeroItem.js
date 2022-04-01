@@ -1,39 +1,75 @@
-import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, View, Text, Modal, Pressable, TouchableOpacity } from "react-native";
+import { useState, useContext } from 'react';
+
 import Classes from "../data/Classes";
 import { whiteText } from "../../shared/styles";
+import AppContext from "../../AppContext";
 
 export default HeroItem = ({hero, handlePress}) => {
+    const [modalVisible, setModalVisible] = useState(false);
+    const ctx = useContext(AppContext);
     return (
-        <View style={styles.container}>
-            <Image style={styles.image} source={Classes[hero.icon].icon} />
-            <View style={styles.infoContainer}>
-                <View style={styles.header}>
-                    <Text style={[whiteText, styles.name]}>{hero.name}</Text>                    
-                </View> 
-                <View style={styles.stats}>
-                    <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.hp}</Text>
+        <View>
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(!modalVisible) }
+            >
+                <View style={styles.centeredView}>
+                    <View style={styles.modalView}>
+                        <Image style={styles.image} source={Classes[hero.icon].icon} />
+                        <Text style={styles.modalText}>Hire {hero.name}?</Text>
+                        <Pressable
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                                ctx.updateGold(hero.cost * -1);
+                                ctx.addToRoster(hero);
+                                handlePress();
+                            }}
+                        >
+                            <Text style={styles.textStyle}>Yes</Text>
+                        </Pressable>
+                        <Pressable
+                            style={[styles.button, styles.buttonClose]}
+                            onPress={() => setModalVisible(!modalVisible)}
+                        >
+                            <Text style={styles.textStyle}>No</Text>
+                        </Pressable>
                     </View>
-                    <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.might}</Text>
-                    </View>
-                    <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.stats.magic}</Text>
-                    </View>
-                    <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/two-coins.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{hero.cost}</Text>
-                    </View>                                                             
-                </View>                                        
-            </View> 
-            {/*<TouchableOpacity style={styles.hireBtn} onPress={handlePress}>
-                <Text style={styles.header}>HIRE</Text>
-                <Text style={styles.header}>$20</Text>
-    </TouchableOpacity>*/}      
-        </View>
+                </View>
+            </Modal>
+            <TouchableOpacity 
+                style={styles.container}
+                onPress={() => setModalVisible(true)}
+            >
+                <Image style={styles.image} source={Classes[hero.icon].icon} />
+                <View style={styles.infoContainer}>
+                    <View style={styles.header}>
+                        <Text style={[whiteText, styles.name]}>{hero.name}</Text>                    
+                    </View> 
+                    <View style={styles.stats}>
+                        <View style={styles.stat}>
+                            <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
+                            <Text style={[whiteText, styles.statFont]}>{hero.stats.hp}</Text>
+                        </View>
+                        <View style={styles.stat}>
+                            <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
+                            <Text style={[whiteText, styles.statFont]}>{hero.stats.might}</Text>
+                        </View>
+                        <View style={styles.stat}>
+                            <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
+                            <Text style={[whiteText, styles.statFont]}>{hero.stats.magic}</Text>
+                        </View>
+                        <View style={styles.stat}>
+                            <Image style={styles.uiImage} source={require("../assets/icons/ui/two-coins.png")} />
+                            <Text style={[whiteText, styles.statFont]}>{hero.cost}</Text>
+                        </View>                                                             
+                    </View>                                        
+                </View>  
+            </TouchableOpacity>
+        </View>        
     );
 }
 
@@ -87,5 +123,46 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: "center",
         marginRight: 10
-    }
+    },
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+      },
+      modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+      },
+      button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+      },
+      buttonOpen: {
+        backgroundColor: "#F194FF",
+      },
+      buttonClose: {
+        backgroundColor: "#2196F3",
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
 });

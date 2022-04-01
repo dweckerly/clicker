@@ -1,3 +1,5 @@
+import uuid from "react-native-uuid";
+
 import Classes from "../data/Classes";
 import Names from "../data/Names";
 
@@ -36,6 +38,7 @@ export function generateHero() {
     const classIndex = getRandomInt(classLength);
     const heroClass = Classes[classIndex];
     return {
+        "id": uuid.v4(),
         "name": setHeroName(heroClass),
         "icon": classIndex,
         "level": 1,
