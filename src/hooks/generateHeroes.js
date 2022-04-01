@@ -27,26 +27,38 @@ function setHeroName(heroClass) {
     }
 }
 
-function setCost(heroClass, level) {
+const baseRandom = {
+    "min": 0.5,
+    "max": 0.9
+}
+
+function setCost(heroClass, level, mod) {
     let cost = heroClass.cost;
     cost *= level;
-    return Math.round(cost * getRandomFloat(0.8, 1.2, 3))
+    return Math.round(cost * getRandomFloat(baseRandom.min + mod, baseRandom.max + mod, 3))
 }
-  
+
+function setStat(stat, level, mod) {
+    let newStat = stat * level;
+    return Math.round(newStat * getRandomFloat(baseRandom.min + mod, baseRandom.max + mod,  3))
+}
+   
 export function generateHero() {
     const classLength = Classes.length;
     const classIndex = getRandomInt(classLength);
     const heroClass = Classes[classIndex];
+    const level = 1;
+    const modifier = getRandomFloat(0.2, 0.5, 3);
     return {
         "id": uuid.v4(),
         "name": setHeroName(heroClass),
         "icon": classIndex,
-        "level": 1,
-        "cost": setCost(heroClass, 1),
+        "level": level,
+        "cost": setCost(heroClass, level, modifier),
         "stats": {
-            "hp": heroClass.stats.hp,
-            "might": heroClass.stats.might,
-            "magic": heroClass.stats.magic
+            "hp": setStat(heroClass.stats.hp, level, modifier),
+            "might": setStat(heroClass.stats.might, level, modifier),
+            "magic": setStat(heroClass.stats.magic, level, modifier)
         }
     }
 }

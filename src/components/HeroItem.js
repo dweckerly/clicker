@@ -19,24 +19,26 @@ export default HeroItem = ({hero, handlePress}) => {
                 <View style={styles.centeredView}>
                     <View style={styles.modalView}>
                         <Image style={styles.image} source={Classes[hero.icon].icon} />
-                        <Text style={styles.modalText}>Hire {hero.name}?</Text>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => {
-                                setModalVisible(!modalVisible);
-                                ctx.updateGold(hero.cost * -1);
-                                ctx.addToRoster(hero);
-                                handlePress();
-                            }}
-                        >
-                            <Text style={styles.textStyle}>Yes</Text>
-                        </Pressable>
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
-                        >
-                            <Text style={styles.textStyle}>No</Text>
-                        </Pressable>
+                        <Text style={[whiteText, styles.modalText]}>Hire {hero.name}?</Text>
+                        <View style={styles.btnContainer}>
+                            <Pressable
+                                style={[styles.button, styles.buttonClose]}
+                                onPress={() => {
+                                    setModalVisible(!modalVisible);
+                                    ctx.updateGold(hero.cost * -1);
+                                    ctx.addToRoster(hero);
+                                    handlePress();
+                                }}
+                            >
+                                <Text style={styles.textStyle}>Yes</Text>
+                            </Pressable>
+                            <Pressable
+                                style={[styles.button, styles.buttonClose]}
+                                onPress={() => setModalVisible(!modalVisible)}
+                            >
+                                <Text style={styles.textStyle}>No</Text>
+                            </Pressable>
+                        </View>                        
                     </View>
                 </View>
             </Modal>
@@ -132,26 +134,17 @@ const styles = StyleSheet.create({
       },
       modalView: {
         margin: 20,
-        backgroundColor: "white",
+        backgroundColor: "#000",
         borderRadius: 20,
         padding: 35,
         alignItems: "center",
-        shadowColor: "#000",
-        shadowOffset: {
-          width: 0,
-          height: 2
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
         elevation: 5
       },
       button: {
         borderRadius: 20,
-        padding: 10,
+        padding: 20,
+        margin: 10,
         elevation: 2
-      },
-      buttonOpen: {
-        backgroundColor: "#F194FF",
       },
       buttonClose: {
         backgroundColor: "#2196F3",
@@ -164,5 +157,8 @@ const styles = StyleSheet.create({
       modalText: {
         marginBottom: 15,
         textAlign: "center"
+      },
+      btnContainer: {
+          flexDirection: "row"
       }
 });

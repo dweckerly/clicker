@@ -6,6 +6,7 @@ import AppContext from './AppContext';
 
 import HeroesScreen from './src/components/screens/HeroesScreen';
 import QuestsScreen from './src/components/screens/QuestsScreen';
+import Header from './src/components/Header';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +22,8 @@ export default function App() {
   }
 
   const addToRoster = (hero) => {
-    const newRoster = [...roster].push(hero);
+    let newRoster = [...roster];
+    newRoster.push(hero);
     setRoster(newRoster);
   }
 
@@ -46,7 +48,8 @@ export default function App() {
   }
 
   const addCompletedQuests = (quest) => {
-      const newArr = [...completedQuests].push(quest);
+      let newArr = [...completedQuests];
+      newArr.push(quest);
       setRoster(newArr);
   }
 
@@ -64,6 +67,7 @@ export default function App() {
   }
   return (
     <AppContext.Provider value={globalSettings}>
+      <Header></Header>
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Heroes" component={HeroesScreen} />
