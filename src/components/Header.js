@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { View, Text, StyleSheet, Image } from "react-native";
-import AppContext from "../../AppContext"
+import { AppContext } from "../../AppProvider"
 import { whiteText } from "../../shared/styles";
 
 export default Header = () => {
-    const ctx = useContext(AppContext);
+    const ctx = useContext(AppContext)
     return (
         <View style={styles.conatiner}>
             <View style={styles.innerContainer}>

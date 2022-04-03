@@ -3,7 +3,7 @@ import { useState, useContext } from 'react';
 
 import Classes from "../data/Classes";
 import { whiteText } from "../../shared/styles";
-import AppContext from "../../AppContext";
+import { AppContext } from "../../AppProvider";
 
 export default HeroItem = ({hero, handlePress}) => {
     const [modalVisible, setModalVisible] = useState(false);
