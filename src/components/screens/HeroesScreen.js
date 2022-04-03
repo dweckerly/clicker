@@ -17,7 +17,9 @@ export default HeroesScreen = () => {
         <NavigationContainer
             independent = {true}
         >
-            <Tab.Navigator>
+            <Tab.Navigator screenOptions={{
+                headerShown: false
+            }}>
                 <Tab.Screen name="Roster" component={HeroRosterScreen} />
                 <Tab.Screen name="Hire" component={HeroHireScreen} />
             </Tab.Navigator>
