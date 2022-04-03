@@ -1,9 +1,12 @@
-import { View } from "react-native"
-import HeroHireList from "../HeroHireList"
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { generateHero } from "../../hooks/generateHeroes"
 
-import { background } from "../../../shared/styles"
+import HeroHireScreen from "./HeroHireScreen";
+import HeroRosterScreen from "./HeroRosterScreen";
+
+const Tab = createBottomTabNavigator();
 
 export default HeroesScreen = () => {
     let heroData = []
@@ -11,8 +14,13 @@ export default HeroesScreen = () => {
         heroData.push(generateHero());
     }
     return (
-        <View style={background}>
-            <HeroHireList data={heroData}></HeroHireList>
-        </View>
-    )
+        <NavigationContainer
+            independent = {true}
+        >
+            <Tab.Navigator>
+                <Tab.Screen name="Roster" component={HeroRosterScreen} />
+                <Tab.Screen name="Hire" component={HeroHireScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
 }

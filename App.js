@@ -14,7 +14,9 @@ export default function App() {
   return (
     <AppProvider>
       <Header></Header>
-      <NavigationContainer>
+      <NavigationContainer
+        independent = {true}
+      >
         <Tab.Navigator>
           <Tab.Screen name="Heroes" component={HeroesScreen} />
           <Tab.Screen name="Quests" component={QuestsScreen} />

@@ -118,14 +118,6 @@ const styles = StyleSheet.create({
     statFont: {
         fontSize: 16
     },
-    hireBtn: {
-        backgroundColor: "#fff",
-        height: 70,
-        width: 70,
-        borderRadius: 10,
-        justifyContent: "center",
-        marginRight: 10
-    },
     centeredView: {
         flex: 1,
         justifyContent: "center",
