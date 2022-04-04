@@ -9,6 +9,24 @@ export default QuestDetails = ({route}) => {
                 <Image style={styles.image} source={quest.icon} />
                 <Text style={[whiteText, styles.text]}>{quest.description}</Text>
             </View>
+            <View style={styles.stats}>
+                <View style={styles.stat}>
+                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/heart.png")}/>
+                    <Text style={[whiteText]}>{quest.requirements.hp}</Text>
+                </View>
+                <View style={styles.stat}>
+                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/strong.png")}/>
+                    <Text style={[whiteText]}>{quest.requirements.might}</Text>
+                </View>
+                <View style={styles.stat}>
+                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")}/>
+                    <Text style={[whiteText]}>{quest.requirements.magic}</Text>
+                </View>
+                <View style={styles.stat}>
+                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/sands-of-time.png")}/>
+                    <Text style={[whiteText]}>{quest.time}</Text>
+                </View>
+            </View>
         </View>
     );
 }
@@ -36,5 +54,26 @@ const styles = StyleSheet.create({
         fontSize: 24,
         flex: 1,
         flexWrap: 'wrap'
-    }
+    },
+    stats: {
+        height: 50,
+        backgroundColor: '#000',
+        marginLeft: 10,
+        marginRight: 10,
+        borderRadius: 10,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    stat: {
+        flexDirection: "row",
+        marginRight: 20
+    },
+    name: {
+        fontSize: 20
+    },
+    uiImage: {
+        height: 20,
+        width: 20,
+    },
 })

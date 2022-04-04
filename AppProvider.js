@@ -21,7 +21,7 @@ const AppProvider = ({children}) => {
     const removeFromRoster = (hero) => {
         let newRoster = [...roster];
         setRoster(newRoster.filter((el) => {
-        return el.id != hero.id;
+            return el.id != hero.id;
         }));
     }
 
@@ -41,7 +41,7 @@ const AppProvider = ({children}) => {
     const addCompletedQuests = (quest) => {
         let newArr = [...completedQuests];
         newArr.push(quest);
-        setRoster(newArr);
+        setCompletedQuests(newArr);
     }
 
     const globalSettings = {
