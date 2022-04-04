@@ -1,4 +1,4 @@
-import { Image } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -16,37 +16,76 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <AppProvider>
-      <Header></Header>
+      
       <NavigationContainer
         independent={true}
       >
-        <Tab.Navigator>
+        <Header></Header>
+        <Tab.Navigator
+          sceneContainerStyle={{
+            backgroundColor: "#2e2e2e"
+          }}
+        >
           <Tab.Screen 
             name="Guild" 
             component={HeroRosterScreen} 
             options={{
-              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/medieval-barracks.png")} />
+              headerShown: false,
+              /*
+              headerTitleAlign: 'center',
+              headerStyle: styles.header,
+              headerTitleStyle: styles.headerTitle,
+              */
+              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/medieval-barracks.png")} />,
+              tabBarActiveBackgroundColor: "#000",
+              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveTintColor: "#fff",
+              tabBarInactiveTintColor: "#fff"
             }}
           />
           <Tab.Screen 
             name="Quests" 
             component={QuestsActiveScreen} 
             options={{
-              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/conqueror.png")} />
+              headerShown: false,
+              headerTitleAlign: 'center',
+              headerStyle: styles.header,
+              headerTitleStyle: styles.headerTitle,
+              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/conqueror.png")} />,
+              tabBarActiveBackgroundColor: "#000",
+              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveTintColor: "#fff",
+              tabBarInactiveTintColor: "#fff"
             }}
           />
           <Tab.Screen 
             name="Tavern" 
             component={HeroHireScreen} 
             options={{
-              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/tavern-sign.png")} />
+              headerShown: false,
+              headerTitleAlign: 'center',
+              headerStyle: styles.header,
+              headerTitleStyle: styles.headerTitle,
+              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/tavern-sign.png")} />,
+              tabBarActiveBackgroundColor: "#000",
+              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveTintColor: "#fff",
+              tabBarInactiveTintColor: "#fff"
             }}
           />          
           <Tab.Screen 
             name="Board" 
             component={QuestsAvailableScreen} 
             options={{
-              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/treasure-map.png")} />
+              headerShown: false,
+              headerTitleAlign: 'center',
+              headerStyle: styles.header,
+              headerTitleStyle: styles.headerTitle,
+              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/treasure-map.png")} />,
+              tabBarActiveBackgroundColor: "#000",
+              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveTintColor: "#fff",
+              tabBarInactiveTintColor: "#fff"
             }}
           />
         </Tab.Navigator>
@@ -54,3 +93,12 @@ export default function App() {
     </AppProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "#000"
+  },
+  headerTitle: {
+    color: "#fff"
+  }
+});

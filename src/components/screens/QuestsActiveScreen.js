@@ -12,7 +12,7 @@ export default QuestsAactiveScreen = () => {
             <View style={background}>
                 <QuestList data={ctx.activeQuests}></QuestList>
             </View>
-        )
+        );
     }
     else {
         return (
@@ -20,7 +20,7 @@ export default QuestsAactiveScreen = () => {
                 <Text style={[whiteText, styles.text]}>No active Quests.</Text>
                 <Text style={[whiteText, styles.text]}>Check the Board for new Quests.</Text>
             </View>
-        )
+        );
     }
 }
 

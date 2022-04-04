@@ -18,7 +18,10 @@ export default Header = () => {
 const styles = StyleSheet.create({
     conatiner: {            
         height: 100,
-        backgroundColor: '#000'
+        backgroundColor: '#000',
+        elevation: 5,
+        borderColor: '#fff',
+        borderBottomWidth: 0.25
     },
     innerContainer: {
         marginTop: 30,
