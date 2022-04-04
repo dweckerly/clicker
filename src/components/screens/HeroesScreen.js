@@ -1,3 +1,4 @@
+import { Image, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -5,6 +6,7 @@ import { generateHero } from "../../hooks/generateHeroes"
 
 import HeroHireScreen from "./HeroHireScreen";
 import HeroRosterScreen from "./HeroRosterScreen";
+import { tabImage } from '../../shared/styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +23,13 @@ export default HeroesScreen = () => {
                 headerShown: false
             }}>
                 <Tab.Screen name="Roster" component={HeroRosterScreen} />
-                <Tab.Screen name="Hire" component={HeroHireScreen} />
+                <Tab.Screen 
+                    name="Tavern" 
+                    component={HeroHireScreen}
+                    options={{
+                        tabBarIcon: () => <Image style={tabImage} source={require("../../assets/icons/ui/tavern-sign.png")} />
+                    }} 
+                />
             </Tab.Navigator>
         </NavigationContainer>
     );

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { AppContext } from "../../../AppProvider";
 import RosterList from "../heroes/RosterList";
-import { background } from "../../shared/styles";
+import { background, whiteText } from "../../shared/styles";
 
 export default HeroRosterScreen = () => {
     const ctx = useContext(AppContext);
@@ -16,7 +16,7 @@ export default HeroRosterScreen = () => {
     else {
         return (
             <View style={[background, styles.container]}>
-                <Text>Hire Heroes and add them to your Roster!</Text>
+                <Text style={[whiteText, styles.text]}>Hire Heroes at the Tavern to add them to your Roster!</Text>
             </View>
         );
     }
@@ -25,6 +25,11 @@ export default HeroRosterScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignContent: "center"
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    text: {
+        textAlign: 'center',
+        fontSize: 30
     }
 }) 
