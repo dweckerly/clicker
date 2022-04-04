@@ -27,7 +27,7 @@ const Quests = [
     },
     {
         'name': 'Elusive Sea Monster',
-        'description': 'A secretive sea monster is plaguing a quite seaside town.',
+        'description': 'A secretive sea monster is plaguing a quite little port town.',
         'icon': require('../assets/icons/quests/sea-monster.png'),
         'requirements': {
             'hp': 10,
@@ -66,7 +66,7 @@ const Quests = [
     },
     {
         'name': 'Troglodyte Treasure Trove',
-        'description': 'Recover the stolen treasure hidden deep in the troglodyte den.',
+        'description': 'Recover the stolen treasure hidden deep within the troglodyte den.',
         'icon': require('../assets/icons/quests/troglodyte.png'),
         'requirements': {
             'hp': 20,
