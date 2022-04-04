@@ -1,13 +1,28 @@
 import { View } from "react-native";
-import { generateQuestList } from "../../hooks/generateQuests";
-import QuestList from "../quests/QuestList";
-import { background } from "../../shared/styles";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import QuestBoard from "../quests/QuestBoard";
+import QuestDetails from "../quests/QuestDetails";
+
+const Stack = createNativeStackNavigator();
 
 export default QuestsAvailableScreen = () => {
-    let availableQuests = generateQuestList(5);
     return (
-        <View style={background}>
-            <QuestList data={availableQuests}></QuestList>
-        </View>
+        <NavigationContainer
+            independent={true}
+        >
+            <Stack.Navigator>
+                <Stack.Screen 
+                    name="Board" 
+                    component={QuestBoard} 
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen 
+                    name="QuestDetails" 
+                    component={QuestDetails}
+                    options={({ route }) => ({ title: route.params.quest.name })}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }

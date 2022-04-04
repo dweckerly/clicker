@@ -1,9 +1,12 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { whiteText } from "../../shared/styles";
 
-export default QuestItem = ({quest}) => {
+export default QuestItem = ({quest, navigation}) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity 
+            style={styles.container}
+            onPress={() => navigation.navigate("QuestDetails", { quest: quest })}
+        >
             <Image style={styles.image} source={quest.icon} />
             <View style={styles.infoContainer}>
                 <View style={styles.header}>
@@ -71,12 +74,4 @@ const styles = StyleSheet.create({
     statFont: {
         fontSize: 16
     },
-    hireBtn: {
-        backgroundColor: "#fff",
-        height: 70,
-        width: 70,
-        borderRadius: 10,
-        justifyContent: "center",
-        marginRight: 10
-    }
 });

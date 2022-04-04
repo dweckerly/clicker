@@ -11,14 +11,15 @@ import QuestsAvailableScreen from './src/components/screens/QuestsAvailableScree
 import Header from './src/components/Header';
 import { tabImage } from './src/shared/styles';
 
-
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <AppProvider>
       <Header></Header>
-      <NavigationContainer>
+      <NavigationContainer
+        independent={true}
+      >
         <Tab.Navigator>
           <Tab.Screen 
             name="Guild" 
