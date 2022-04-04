@@ -16,7 +16,8 @@ export default HeroRosterScreen = () => {
     else {
         return (
             <View style={[background, styles.container]}>
-                <Text style={[whiteText, styles.text]}>Hire Heroes at the Tavern to add them to your Roster!</Text>
+                <Text style={[whiteText, styles.text]}>No Adventurers in your Guild.</Text>
+                <Text style={[whiteText, styles.text]}>Head to the Tavern to hire Adventurers.</Text>
             </View>
         );
     }
