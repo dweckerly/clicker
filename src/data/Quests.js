@@ -33,7 +33,7 @@ const Quests = [
             'hp': 10,
             'might': 6,
             'magic': 4,
-            'special': ['Nautical']
+            'special': ['nautical']
         },
         'reward': 75,
         'time': 1
@@ -53,13 +53,13 @@ const Quests = [
     },
     {
         'name': 'Into the Goblin Caves',
-        'description': 'Venture into the goblin caves and eliminate them.',
+        'description': 'Venture into the goblin caves and eliminate its denizens.',
         'icon': require('../assets/icons/quests/goblin.png'),
         'requirements': {
             'hp': 15,
             'might': 10,
             'magic': 8,
-            'special': ['Subterranean']
+            'special': ['subterranean', 'nautical']
         },
         'reward': 100,
         'time': 1
@@ -72,7 +72,7 @@ const Quests = [
             'hp': 20,
             'might': 15,
             'magic': 12,
-            'special': ['Subterranean']
+            'special': ['subterranean']
         },
         'reward': 500,
         'time': 1

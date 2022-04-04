@@ -4,6 +4,7 @@ export const AppContext = createContext();
 const AppProvider = ({children}) => {
     const [gold, setGold] = useState(100);
     const [roster, setRoster] = useState([]);
+    const [availableQuests, setAvailableQuests] = useState([]);
     const [activeQuests, setActiveQuests] = useState([]);
     const [completedQuests, setCompletedQuests] = useState([]);
 
@@ -25,6 +26,19 @@ const AppProvider = ({children}) => {
         }));
     }
 
+    const addAvailableQuests = (quest) => {
+        let quests = [...availableQuests];
+        quests.push(quest);
+        setAvailableQuests(quests);
+    }
+
+    const removeAvailableQuests = () => {
+        let quests = [...availableQuests];
+        setAvailableQuests(quests.filter((el) => {
+            return el.name != quest.name;
+        }));
+    }
+
     const addActiveQuest = (quest) => {
         let quests = [...activeQuests];
         quests.push(quest);
@@ -33,7 +47,7 @@ const AppProvider = ({children}) => {
 
     const removeActiveQuest = (quest) => {
         let quests = [...activeQuests];
-        setRoster(quests.filter((el) => {
+        setActiveQuests(quests.filter((el) => {
             return el.name != quest.name;
         }));
     }
@@ -50,6 +64,10 @@ const AppProvider = ({children}) => {
         roster: roster,
         addToRoster,
         removeFromRoster,
+        availableQuests: availableQuests,
+        setAvailableQuests,
+        addAvailableQuests,
+        removeAvailableQuests,
         activeQuests: activeQuests,
         addActiveQuest,
         removeActiveQuest,

@@ -16,7 +16,6 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <AppProvider>
-      
       <NavigationContainer
         independent={true}
       >

@@ -1,32 +1,71 @@
-import { StyleSheet, View, Image, Text } from "react-native";
+import { useContext, useState } from "react";
+import { StyleSheet, View, Image, Text, Button, FlatList } from "react-native";
+import { AppContext } from "../../../AppProvider";
 import { background, flex, whiteText } from "../../shared/styles";
+import Specials from "../../data/Specials";
 
 export default QuestDetails = ({route}) => {
     const { quest } = route.params;
+    const [assignedHeroes, setAssignedHeroes] = useState([]);
+    const ctx = useContext(AppContext);
+    const addAssignedHero = (id) => {
+        const hero = ctx.roster.find(x => x.id === id);
+        let arr = [...assignedHeroes]
+        arr.push(hero);
+        setAssignedHeroes(arr);
+    }
+    const removeAssignedHero = (id) => {
+        const index = ctx.roster.map(x => {
+            return x.id;
+        }).indexOf(id);
+        let arr = [...assignedHeroes];
+        arr.splice(index, 1);
+        setAssignedHeroes(arr);
+    }
+    const startQuest = () => {
+        // remove from available quests and add to active quests
+        console.log("Starting quest!");
+    }
     return (
         <View style={[flex, background]}>
             <View style={styles.container}>
                 <Image style={styles.image} source={quest.icon} />
-                <Text style={[whiteText, styles.text]}>{quest.description}</Text>
+                <View style={styles.descContainer}>
+                    <Text style={[whiteText, styles.text]}>{quest.description}</Text>
+                    <FlatList 
+                        data = {quest.requirements.special}
+                        keyExtractor={(item, index) => index.toString()}
+                        renderItem={({item}) => <Image style={{height: 40, width: 40, marginRight: 10}} source={Specials[item].icon}/>}
+                        horizontal
+                        showsHorizontalScrollIndicator = {false}
+                    />
+                </View>
             </View>
             <View style={styles.stats}>
                 <View style={styles.stat}>
-                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/heart.png")}/>
-                    <Text style={[whiteText]}>{quest.requirements.hp}</Text>
-                </View>
-                <View style={styles.stat}>
                     <Image style={styles.uiImage} source={require("../../assets/icons/ui/strong.png")}/>
-                    <Text style={[whiteText]}>{quest.requirements.might}</Text>
+                    <Text style={[whiteText, styles.statText]}>{quest.requirements.might}</Text>
                 </View>
                 <View style={styles.stat}>
                     <Image style={styles.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")}/>
-                    <Text style={[whiteText]}>{quest.requirements.magic}</Text>
+                    <Text style={[whiteText, styles.statText]}>{quest.requirements.magic}</Text>
                 </View>
                 <View style={styles.stat}>
                     <Image style={styles.uiImage} source={require("../../assets/icons/ui/sands-of-time.png")}/>
-                    <Text style={[whiteText]}>{quest.time}</Text>
+                    <Text style={[whiteText, styles.statText]}>{quest.time}</Text>
+                </View>
+                <View style={styles.stat}>
+                    <Image style={styles.uiImage} source={require("../../assets/icons/ui/two-coins.png")}/>
+                    <Text style={[whiteText, styles.statText]}>{quest.reward}</Text>
                 </View>
             </View>
+            <View style={styles.startBtnContainer}>
+                <Button 
+                    title="Start Quest"
+                    onPress={() => startQuest() }
+                />
+            </View>
+            
         </View>
     );
 }
@@ -49,10 +88,13 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
+    descContainer: {
+        margin: 10,
+        flex: 1
+    },
     text: {
-        marginLeft: 10,
-        fontSize: 24,
-        flex: 1,
+        fontSize: 22,
+        flex: 9,
         flexWrap: 'wrap'
     },
     stats: {
@@ -69,11 +111,17 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginRight: 20
     },
+    statText: {
+      fontSize: 24  
+    },
     name: {
         fontSize: 20
     },
     uiImage: {
-        height: 20,
-        width: 20,
+        height: 30,
+        width: 30,
     },
+    startBtnContainer: {
+        margin: 10
+    }
 })
