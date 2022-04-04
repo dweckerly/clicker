@@ -2,7 +2,7 @@ import { Image, StyleSheet, View, Text, Modal, Pressable, TouchableOpacity } fro
 import { useState, useContext } from 'react';
 
 import Classes from "../../data/Classes";
-import { whiteText } from "../../../shared/styles";
+import { whiteText } from "../../shared/styles"
 import { AppContext } from "../../../AppProvider";
 
 export default HeroItem = ({hero, handlePress}) => {

@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { whiteText } from "../../../shared/styles";
+import { whiteText } from "../../shared/styles";
 
 export default QuestItem = ({quest}) => {
     return (

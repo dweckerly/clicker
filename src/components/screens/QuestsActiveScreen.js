@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { View } from "react-native";
 
 import QuestList from "../quests/QuestList";
-import { background } from "../../../shared/styles";
+import { background } from "../../shared/styles";
 import { AppContext } from "../../../AppProvider";
 
 export default QuestsAactiveScreen = () => {

@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { generateQuestList } from "../../hooks/generateQuests";
 import QuestList from "../quests/QuestList";
-import { background } from "../../../shared/styles";
+import { background } from "../../shared/styles";
 
 export default QuestsAvailableScreen = () => {
     let availableQuests = generateQuestList(5);

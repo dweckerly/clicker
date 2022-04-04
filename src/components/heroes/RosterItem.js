@@ -1,6 +1,6 @@
 import { TouchableOpacity, View, Image, Text, StyleSheet } from "react-native";
 import Classes from "../../data/Classes";
-import { whiteText } from "../../../shared/styles";
+import { whiteText } from "../../shared/styles";
 
 export default RosterItem = ({hero, handlePress}) => {
     return (
