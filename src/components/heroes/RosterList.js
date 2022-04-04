@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { FlatList, View } from "react-native";
-import { AppContext } from "../../AppProvider";
+import { AppContext } from "../../../AppProvider";
 import RosterItem from "./RosterItem";
 
 export default RosterList = () => {

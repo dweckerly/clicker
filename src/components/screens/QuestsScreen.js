@@ -1,14 +1,21 @@
-import { View } from "react-native";
-import QuestList from "../QuestList";
-import { generateQuestList } from "../../hooks/generateQuests";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import QuestsActiveScreen from "./QuestsActiveScreen";
+import QuestsAvailableScreen from './QuestsAvailableScreen';
 
-import { background } from "../../../shared/styles";
+const Tab = createBottomTabNavigator();
 
 export default QuestsScreen = () => {
-    let availableQuests = generateQuestList(5);
     return (
-        <View style={background}>
-            <QuestList data={availableQuests}></QuestList>
-        </View>
-    )
+        <NavigationContainer
+            independent = {true}
+        >
+            <Tab.Navigator screenOptions={{
+                headerShown: false
+            }}>
+                <Tab.Screen name="Active" component={QuestsActiveScreen} />
+                <Tab.Screen name="Available" component={QuestsAvailableScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
 }

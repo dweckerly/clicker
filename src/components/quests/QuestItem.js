@@ -1,5 +1,5 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { whiteText } from "../../shared/styles";
+import { whiteText } from "../../../shared/styles";
 
 export default QuestItem = ({quest}) => {
     return (
@@ -11,15 +11,15 @@ export default QuestItem = ({quest}) => {
                 </View> 
                 <View style={styles.stats}>
                     <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/heart.png")} />
+                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/heart.png")} />
                         <Text style={[whiteText, styles.statFont]}>{quest.requirements.hp}</Text>
                     </View>
                     <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/strong.png")} /> 
+                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/strong.png")} /> 
                         <Text style={[whiteText, styles.statFont]}>{quest.requirements.might}</Text>
                     </View>
                     <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../assets/icons/ui/magic-swirl.png")} />
+                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")} />
                         <Text style={[whiteText, styles.statFont]}>{quest.requirements.magic}</Text>
                     </View>                                                            
                 </View>                                        

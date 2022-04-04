@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { View, Text } from "react-native";
 import { AppContext } from "../../../AppProvider";
-import RosterList from "../RosterList";
+import RosterList from "../heroes/RosterList";
 import { background } from "../../../shared/styles";
 
 export default HeroRosterScreen = () => {
