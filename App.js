@@ -37,8 +37,8 @@ export default function App() {
               headerTitleStyle: styles.headerTitle,
               */
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/medieval-barracks.png")} />,
-              tabBarActiveBackgroundColor: "#000",
-              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveBackgroundColor: "#2e2e2e",
+              tabBarInactiveBackgroundColor: "#000",
               tabBarActiveTintColor: "#fff",
               tabBarInactiveTintColor: "#fff"
             }}
@@ -52,8 +52,8 @@ export default function App() {
               headerStyle: styles.header,
               headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/conqueror.png")} />,
-              tabBarActiveBackgroundColor: "#000",
-              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveBackgroundColor: "#2e2e2e",
+              tabBarInactiveBackgroundColor: "#000",
               tabBarActiveTintColor: "#fff",
               tabBarInactiveTintColor: "#fff"
             }}
@@ -67,8 +67,8 @@ export default function App() {
               headerStyle: styles.header,
               headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/tavern-sign.png")} />,
-              tabBarActiveBackgroundColor: "#000",
-              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveBackgroundColor: "#2e2e2e",
+              tabBarInactiveBackgroundColor: "#000",
               tabBarActiveTintColor: "#fff",
               tabBarInactiveTintColor: "#fff"
             }}
@@ -82,8 +82,8 @@ export default function App() {
               headerStyle: styles.header,
               headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/treasure-map.png")} />,
-              tabBarActiveBackgroundColor: "#000",
-              tabBarInactiveBackgroundColor: "#2e2e2e",
+              tabBarActiveBackgroundColor: "#2e2e2e",
+              tabBarInactiveBackgroundColor: "#000",
               tabBarActiveTintColor: "#fff",
               tabBarInactiveTintColor: "#fff"
             }}
