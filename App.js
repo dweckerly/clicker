@@ -25,7 +25,7 @@ export default function App() {
             name="Guild" 
             component={HeroRosterScreen} 
             options={{
-              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/mounted-knight.png")} />
+              tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/medieval-barracks.png")} />
             }}
           />
           <Tab.Screen 
