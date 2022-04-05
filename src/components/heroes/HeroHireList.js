@@ -1,20 +1,16 @@
 import { View, FlatList } from "react-native";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import HeroItem from "./HeroItem";
+import { AppContext } from "../../../AppProvider";
 
-export default HeroHireList = ({data}) => {
-    const [heroList, setHeroList] = useState(data);
-    const removeHero = (index) => {
-        list = [...heroList];
-        list.splice(index, 1);
-        setHeroList(list);
-    }
+export default HeroHireList = () => {
+    const ctx = useContext(AppContext);
     return (
         <View>
             <FlatList 
-                data = {heroList}
+                data = {ctx.availableHeroes}
                 keyExtractor={(item, index) => index.toString()}
-                renderItem={({item, index}) => <HeroItem hero={item} handlePress={() => removeHero(index)}></HeroItem> }
+                renderItem={({item, index}) => <HeroItem hero={item}></HeroItem> }
                 showsVerticalScrollIndicator = {false}
             />
         </View>

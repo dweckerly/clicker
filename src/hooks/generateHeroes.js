@@ -42,7 +42,15 @@ function setStat(stat, level, mod) {
     let newStat = stat * level;
     return Math.round(newStat * getRandomFloat(baseRandom.min + mod, baseRandom.max + mod,  3))
 }
-   
+
+export function generateHeroes(max) {
+    let heroArr = []
+    for(let i = 0; i < max; i++) {
+        heroArr.push(generateHero());
+    }
+    return heroArr;
+}
+
 export function generateHero() {
     const classLength = Classes.length;
     const classIndex = getRandomInt(classLength);

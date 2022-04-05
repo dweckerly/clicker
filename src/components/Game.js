@@ -13,6 +13,7 @@ import Header from './Header';
 import { tabImage } from '../shared/styles';
 
 import { generateQuestList } from '../hooks/generateQuests';
+import { generateHeroes } from '../hooks/generateHeroes';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +21,9 @@ export default Game = () => {
     const ctx = useContext(AppContext);
     if(ctx.availableQuests.length < 1) {
         ctx.setAvailableQuests(generateQuestList(5));
+    }
+    if(ctx.availableHeroes.length < 1) {
+        ctx.setAvailableHeroes(generateHeroes(10));
     }
     return (
         <NavigationContainer

@@ -5,7 +5,7 @@ import Classes from "../../data/Classes";
 import { whiteText } from "../../shared/styles"
 import { AppContext } from "../../../AppProvider";
 
-export default HeroItem = ({hero, handlePress}) => {
+export default HeroItem = ({hero}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const ctx = useContext(AppContext);
     return (
@@ -27,7 +27,6 @@ export default HeroItem = ({hero, handlePress}) => {
                                     setModalVisible(!modalVisible);
                                     ctx.updateGold(hero.cost * -1);
                                     ctx.addToRoster(hero);
-                                    handlePress();
                                 }}
                             >
                                 <Text style={styles.textStyle}>Yes</Text>
