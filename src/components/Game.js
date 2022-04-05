@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,13 +18,11 @@ import { generateHeroes } from '../hooks/generateHeroes';
 const Tab = createBottomTabNavigator();
 
 export default Game = () => {
-    const ctx = useContext(AppContext);
-    if(ctx.availableQuests.length < 1) {
-        ctx.setAvailableQuests(generateQuestList(5));
-    }
-    if(ctx.availableHeroes.length < 1) {
-        ctx.setAvailableHeroes(generateHeroes(10));
-    }
+    const { setAvailableQuests, setAvailableHeroes } = useContext(AppContext);
+    useEffect(() => {
+        setAvailableQuests(generateQuestList(5));
+        setAvailableHeroes(generateHeroes(10));
+    }, []);
     return (
         <NavigationContainer
             independent={true}
