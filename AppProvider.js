@@ -3,6 +3,7 @@ export const AppContext = createContext();
 
 const AppProvider = ({children}) => {
     const [gold, setGold] = useState(100);
+    const [day, setDay] = useState(1);
     const [roster, setRoster] = useState([]);
     const [availableHeroes, setAvailableHeroes] = useState([])
     const [availableQuests, setAvailableQuests] = useState([]);
@@ -12,6 +13,11 @@ const AppProvider = ({children}) => {
     const updateGold = (amount) => {
         const newGold = gold + amount;
         setGold(newGold);
+    }
+
+    const increaseDay = () => {
+        const newDay = day++;
+        setDay(newDay);
     }
 
     const addToRoster = (hero) => {
@@ -66,6 +72,8 @@ const AppProvider = ({children}) => {
     const globalSettings = {
         gold: gold,
         updateGold,
+        day: day,
+        increaseDay,
         roster: roster,
         addToRoster,
         removeFromRoster,

@@ -29,9 +29,9 @@ export default Game = () => {
         >
             <Header></Header>
             <Tab.Navigator
-            sceneContainerStyle={{
-                backgroundColor: "#2e2e2e"
-            }}
+                sceneContainerStyle={{
+                    backgroundColor: "#2e2e2e"
+                }}
             >
                 <Tab.Screen 
                     name="Guild" 

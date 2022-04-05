@@ -64,8 +64,7 @@ export default QuestDetails = ({route}) => {
                     title="Start Quest"
                     onPress={() => startQuest() }
                 />
-            </View>
-            
+            </View>            
         </View>
     );
 }
