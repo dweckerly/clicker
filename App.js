@@ -30,11 +30,6 @@ export default function App() {
             component={HeroRosterScreen} 
             options={{
               headerShown: false,
-              /*
-              headerTitleAlign: 'center',
-              headerStyle: styles.header,
-              headerTitleStyle: styles.headerTitle,
-              */
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/medieval-barracks.png")} />,
               tabBarActiveBackgroundColor: "#2e2e2e",
               tabBarInactiveBackgroundColor: "#000",
@@ -47,9 +42,6 @@ export default function App() {
             component={QuestsActiveScreen} 
             options={{
               headerShown: false,
-              headerTitleAlign: 'center',
-              headerStyle: styles.header,
-              headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/conqueror.png")} />,
               tabBarActiveBackgroundColor: "#2e2e2e",
               tabBarInactiveBackgroundColor: "#000",
@@ -62,9 +54,6 @@ export default function App() {
             component={HeroHireScreen} 
             options={{
               headerShown: false,
-              headerTitleAlign: 'center',
-              headerStyle: styles.header,
-              headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/tavern-sign.png")} />,
               tabBarActiveBackgroundColor: "#2e2e2e",
               tabBarInactiveBackgroundColor: "#000",
@@ -77,9 +66,6 @@ export default function App() {
             component={QuestsAvailableScreen} 
             options={{
               headerShown: false,
-              headerTitleAlign: 'center',
-              headerStyle: styles.header,
-              headerTitleStyle: styles.headerTitle,
               tabBarIcon: () => <Image style={tabImage} source={require("./src/assets/icons/ui/treasure-map.png")} />,
               tabBarActiveBackgroundColor: "#2e2e2e",
               tabBarInactiveBackgroundColor: "#000",
@@ -92,12 +78,3 @@ export default function App() {
     </AppProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  header: {
-    backgroundColor: "#000"
-  },
-  headerTitle: {
-    color: "#fff"
-  }
-});
