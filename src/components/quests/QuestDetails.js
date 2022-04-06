@@ -4,7 +4,7 @@ import { AppContext } from "../../../AppProvider";
 import { background, flex, whiteText } from "../../shared/styles";
 import Specials from "../../data/Specials";
 
-export default QuestDetails = ({route}) => {
+export default QuestDetails = ({route, navigation}) => {
     const { quest } = route.params;
     const [assignedHeroes, setAssignedHeroes] = useState([]);
     const ctx = useContext(AppContext);
@@ -24,7 +24,7 @@ export default QuestDetails = ({route}) => {
     }
     const startQuest = () => {
         // remove from available quests and add to active quests
-        console.log("Starting quest!");
+        navigation.navigate("QuestHeroAssign",  { quest: quest });
     }
     return (
         <View style={[flex, background]}>

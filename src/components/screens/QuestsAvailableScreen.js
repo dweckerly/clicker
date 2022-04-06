@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import QuestBoard from "../quests/QuestBoard";
 import QuestDetails from "../quests/QuestDetails";
+import QuestHeroAssign from "../quests/QuestHeroAssign";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,19 @@ export default QuestsAvailableScreen = () => {
                             headerTitleStyle: styles.headerTitle,
                             headerTintColor: '#fff'
                         })                        
+                    }
+                />
+                <Stack.Screen 
+                    name="QuestHeroAssign" 
+                    component={QuestHeroAssign}
+                    options={
+                        ({ route }) => ({ 
+                            title: route.params.quest.name,
+                            headerTitleAlign: 'center',
+                            headerStyle: styles.header,
+                            headerTitleStyle: styles.headerTitle,
+                            headerTintColor: '#fff'
+                        })
                     }
                 />
             </Stack.Navigator>

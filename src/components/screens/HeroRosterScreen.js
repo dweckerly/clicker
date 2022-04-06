@@ -17,7 +17,7 @@ export default HeroRosterScreen = () => {
         return (
             <View style={[background, styles.container]}>
                 <Text style={[whiteText, styles.text]}>No Adventurers in your Guild.</Text>
-                <Text style={[whiteText, styles.text]}>Head to the Tavern to hire Adventurers.</Text>
+                <Text style={[whiteText, styles.text]}>Hire Adventurers from the Tavern.</Text>
             </View>
         );
     }
