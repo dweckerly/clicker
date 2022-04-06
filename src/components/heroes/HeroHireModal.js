@@ -6,7 +6,7 @@ import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
 
 export default HeroHireModal = ({ modalVisible, setModalVisible, hero }) => {
-    const ctx = useContext(AppContext);
+    const { addToRoster } = useContext(AppContext);
     return (
         <Modal
             animationType="slide"
@@ -23,8 +23,7 @@ export default HeroHireModal = ({ modalVisible, setModalVisible, hero }) => {
                             style={[styles.button, styles.buttonClose]}
                             onPress={() => {
                                 setModalVisible(!modalVisible);
-                                ctx.updateGold(hero.cost * -1);
-                                ctx.addToRoster(hero);
+                                addToRoster(hero);
                             }}
                         >
                             <Text style={styles.textStyle}>Yes</Text>
