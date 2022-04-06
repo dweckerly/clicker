@@ -4,7 +4,6 @@ const Quests = [
         'description': 'Defeat the troll terrorizing locals.',
         'icon': require('../assets/icons/quests/troll.png'),
         'requirements': {
-            'hp': 10,
             'might': 5,
             'magic': 3,
             'special': []
@@ -17,12 +16,11 @@ const Quests = [
         'description': 'Capture a wiley gnome running amok.',
         'icon': require('../assets/icons/quests/bad-gnome.png'),
         'requirements': {
-            'hp': 1,
             'might': 1,
             'magic': 3,
             'special': []
         },
-        'reward': 10,
+        'reward': 25,
         'time': 1
     },
     {
@@ -30,22 +28,20 @@ const Quests = [
         'description': 'A secretive sea monster is plaguing a quite little port town.',
         'icon': require('../assets/icons/quests/sea-monster.png'),
         'requirements': {
-            'hp': 10,
             'might': 6,
             'magic': 4,
             'special': ['nautical']
         },
-        'reward': 75,
-        'time': 1
+        'reward': 150,
+        'time': 3
     },
     {
         'name': 'Prankster Fairies',
         'description': 'Fairies are tricking locals out of their goods and must be stopped.',
         'icon': require('../assets/icons/quests/fairy.png'),
         'requirements': {
-            'hp': 1,
             'might': 1,
-            'magic': 8,
+            'magic': 3,
             'special': []
         },
         'reward': 25,
@@ -56,26 +52,24 @@ const Quests = [
         'description': 'Venture into the goblin caves and eliminate its denizens.',
         'icon': require('../assets/icons/quests/goblin.png'),
         'requirements': {
-            'hp': 15,
             'might': 10,
             'magic': 8,
-            'special': ['subterranean', 'nautical']
+            'special': ['subterranean']
         },
-        'reward': 100,
-        'time': 1
+        'reward': 150,
+        'time': 2
     },
     {
         'name': 'Troglodyte Treasure Trove',
         'description': 'Recover the stolen treasure hidden deep within the troglodyte den.',
         'icon': require('../assets/icons/quests/troglodyte.png'),
         'requirements': {
-            'hp': 20,
             'might': 15,
             'magic': 12,
             'special': ['subterranean']
         },
         'reward': 500,
-        'time': 1
+        'time': 4
     },
 ]
 

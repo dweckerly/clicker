@@ -14,16 +14,20 @@ export default QuestItem = ({quest, navigation}) => {
                 </View> 
                 <View style={styles.stats}>
                     <View style={styles.stat}>
-                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/heart.png")} />
-                        <Text style={[whiteText, styles.statFont]}>{quest.requirements.hp}</Text>
-                    </View>
-                    <View style={styles.stat}>
                         <Image style={styles.uiImage} source={require("../../assets/icons/ui/strong.png")} /> 
                         <Text style={[whiteText, styles.statFont]}>{quest.requirements.might}</Text>
                     </View>
                     <View style={styles.stat}>
                         <Image style={styles.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")} />
                         <Text style={[whiteText, styles.statFont]}>{quest.requirements.magic}</Text>
+                    </View>
+                    <View style={styles.stat}>
+                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/sands-of-time.png")} />
+                        <Text style={[whiteText, styles.statFont]}>{quest.time}</Text>
+                    </View> 
+                    <View style={styles.stat}>
+                        <Image style={styles.uiImage} source={require("../../assets/icons/ui/two-coins.png")} />
+                        <Text style={[whiteText, styles.statFont]}>{quest.reward}</Text>
                     </View>                                                            
                 </View>                                        
             </View> 

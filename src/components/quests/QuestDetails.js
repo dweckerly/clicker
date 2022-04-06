@@ -61,7 +61,7 @@ export default QuestDetails = ({route}) => {
             </View>
             <View style={styles.startBtnContainer}>
                 <Button 
-                    title="Start Quest"
+                    title="Accept Quest"
                     onPress={() => startQuest() }
                 />
             </View>            
