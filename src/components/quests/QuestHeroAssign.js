@@ -5,9 +5,9 @@ import { background, flex, whiteText } from "../../shared/styles";
 import QuestHeroAssignItem from "./QuestHeroAssignItem";
 
 export default QuestHeroAssign = ({quest}) => {
-    const [ assignedHeroes, setAssignedHeroes ] = useState([]);
     const { roster } = useContext(AppContext);
-    const [ unAssignedHeroes, setUnassignedHeroes ] = useState(roster);
+    const [ assignedHeroes, setAssignedHeroes ] = useState([]);
+    const [ unAssignedHeroes, setUnassignedHeroes ] = useState([]);
     const addAssignedHero = (hero) => {
         let heroArr = [...assignedHeroes];
         heroArr.push(hero);
@@ -47,10 +47,9 @@ export default QuestHeroAssign = ({quest}) => {
         );
         return () => backHandler.remove();
     }, []);
-    
     if(roster.length > 0) {
         return (
-            <View style={[background, flex]}>
+            <View style={[background, styles.wrapper]}>
                 <View style={styles.break}>
                     <Text style={[whiteText, styles.breakText]}>Roster</Text>
                 </View>
@@ -90,6 +89,9 @@ export default QuestHeroAssign = ({quest}) => {
 }
 
 const styles = StyleSheet.create({
+    wrapper: {
+        height: 1000
+    },
     container: {
         flex: 1,
         justifyContent: 'center',

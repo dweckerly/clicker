@@ -31,19 +31,6 @@ export default QuestsAvailableScreen = () => {
                         })                        
                     }
                 />
-                <Stack.Screen 
-                    name="QuestHeroAssign" 
-                    component={QuestHeroAssign}
-                    options={
-                        ({ route }) => ({ 
-                            title: route.params.quest.name,
-                            headerTitleAlign: 'center',
-                            headerStyle: styles.header,
-                            headerTitleStyle: styles.headerTitle,
-                            headerTintColor: '#fff'
-                        })
-                    }
-                />
             </Stack.Navigator>
         </NavigationContainer>
     )

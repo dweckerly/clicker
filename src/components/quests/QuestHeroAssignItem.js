@@ -2,9 +2,6 @@ import { Image, View, Text, TouchableOpacity } from "react-native";
 import { styles } from "../../shared/hero-item-style";
 import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
-import { isHeroInList } from "../../hooks/util";
-import { useContext } from "react";
-import { AppContext } from "../../../AppProvider";
 
 export default QuestHeroAssignItem = ({hero, handlePress}) => {
     return (

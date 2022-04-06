@@ -1,27 +1,10 @@
-import { useContext, useState } from "react";
 import { StyleSheet, View, Image, Text, Button, FlatList } from "react-native";
-import { AppContext } from "../../../AppProvider";
 import { background, flex, whiteText } from "../../shared/styles";
 import Specials from "../../data/Specials";
+import QuestHeroAssign from "./QuestHeroAssign";
 
 export default QuestDetails = ({route, navigation}) => {
     const { quest } = route.params;
-    const [assignedHeroes, setAssignedHeroes] = useState([]);
-    const ctx = useContext(AppContext);
-    const addAssignedHero = (id) => {
-        const hero = ctx.roster.find(x => x.id === id);
-        let arr = [...assignedHeroes]
-        arr.push(hero);
-        setAssignedHeroes(arr);
-    }
-    const removeAssignedHero = (id) => {
-        const index = ctx.roster.map(x => {
-            return x.id;
-        }).indexOf(id);
-        let arr = [...assignedHeroes];
-        arr.splice(index, 1);
-        setAssignedHeroes(arr);
-    }
     const startQuest = () => {
         // remove from available quests and add to active quests
         navigation.navigate("QuestHeroAssign",  { quest: quest });
@@ -64,7 +47,8 @@ export default QuestDetails = ({route, navigation}) => {
                     title="Accept Quest"
                     onPress={() => startQuest() }
                 />
-            </View>            
+            </View> 
+            <QuestHeroAssign quest={quest}></QuestHeroAssign>           
         </View>
     );
 }
