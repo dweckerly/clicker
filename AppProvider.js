@@ -43,7 +43,7 @@ const AppProvider = ({children}) => {
         setAvailableQuests(quests);
     }
 
-    const removeAvailableQuests = () => {
+    const removeAvailableQuests = (quest) => {
         let quests = [...availableQuests];
         setAvailableQuests(quests.filter((el) => {
             return el.name != quest.name;

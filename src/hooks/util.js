@@ -7,6 +7,15 @@ export function getRandomFloat(min, max, decimals) {
     return parseFloat(str);
 }
 
+export function isHeroInList(hero, list) {
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].id == hero.id) {
+            return true;
+        }
+    }
+    return false;
+}
+
 export function sumOfRosterHeroes(roster) {
     let sum = 0;
     for (let i = 0; i < roster.length; i++) {

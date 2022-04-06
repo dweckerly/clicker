@@ -1,10 +1,10 @@
-import { Image, StyleSheet, View, Text, Modal, Pressable, TouchableOpacity } from "react-native";
+import { Image,  View, Text, TouchableOpacity } from "react-native";
 import { useState } from 'react';
 
 import Classes from "../../data/Classes";
 import { whiteText } from "../../shared/styles"
 
-import { styles } from "./hero-item/hero-item-style";
+import { styles } from "../../shared/hero-item-style";
 import HeroHireModal from "./HeroHireModal";
 
 export default HeroItem = ({hero}) => {

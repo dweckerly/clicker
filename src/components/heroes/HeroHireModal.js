@@ -1,7 +1,7 @@
 import { Modal, View, Image, Pressable, Text } from "react-native";
 import { useContext } from "react"
 import { AppContext } from "../../../AppProvider"
-import { styles } from "./hero-item/hero-item-style";
+import { styles } from "../../shared/hero-item-style";
 import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
 
