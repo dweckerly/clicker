@@ -37,48 +37,48 @@ export default Game = () => {
                     name="Guild" 
                     component={HeroRosterScreen} 
                     options={{
-                    headerShown: false,
-                    tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/medieval-barracks.png")} />,
-                    tabBarActiveBackgroundColor: "#2e2e2e",
-                    tabBarInactiveBackgroundColor: "#000",
-                    tabBarActiveTintColor: "#fff",
-                    tabBarInactiveTintColor: "#fff"
+                        headerShown: false,
+                        tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/medieval-barracks.png")} />,
+                        tabBarActiveBackgroundColor: "#2e2e2e",
+                        tabBarInactiveBackgroundColor: "#000",
+                        tabBarActiveTintColor: "#fff",
+                        tabBarInactiveTintColor: "#fff"
                     }}
                 />
                 <Tab.Screen 
                     name="Quests" 
                     component={QuestsActiveScreen} 
                     options={{
-                    headerShown: false,
-                    tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/conqueror.png")} />,
-                    tabBarActiveBackgroundColor: "#2e2e2e",
-                    tabBarInactiveBackgroundColor: "#000",
-                    tabBarActiveTintColor: "#fff",
-                    tabBarInactiveTintColor: "#fff"
+                        headerShown: false,
+                        tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/conqueror.png")} />,
+                        tabBarActiveBackgroundColor: "#2e2e2e",
+                        tabBarInactiveBackgroundColor: "#000",
+                        tabBarActiveTintColor: "#fff",
+                        tabBarInactiveTintColor: "#fff"
                     }}
                 />
                 <Tab.Screen 
                     name="Tavern" 
                     component={HeroHireScreen} 
                     options={{
-                    headerShown: false,
-                    tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/tavern-sign.png")} />,
-                    tabBarActiveBackgroundColor: "#2e2e2e",
-                    tabBarInactiveBackgroundColor: "#000",
-                    tabBarActiveTintColor: "#fff",
-                    tabBarInactiveTintColor: "#fff"
+                        headerShown: false,
+                        tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/tavern-sign.png")} />,
+                        tabBarActiveBackgroundColor: "#2e2e2e",
+                        tabBarInactiveBackgroundColor: "#000",
+                        tabBarActiveTintColor: "#fff",
+                        tabBarInactiveTintColor: "#fff"
                     }}
                 />          
                 <Tab.Screen 
                     name="Board" 
                     component={QuestsAvailableScreen} 
                     options={{
-                    headerShown: false,
-                    tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/treasure-map.png")} />,
-                    tabBarActiveBackgroundColor: "#2e2e2e",
-                    tabBarInactiveBackgroundColor: "#000",
-                    tabBarActiveTintColor: "#fff",
-                    tabBarInactiveTintColor: "#fff"
+                        headerShown: false,
+                        tabBarIcon: () => <Image style={tabImage} source={require("../assets/icons/ui/treasure-map.png")} />,
+                        tabBarActiveBackgroundColor: "#2e2e2e",
+                        tabBarInactiveBackgroundColor: "#000",
+                        tabBarActiveTintColor: "#fff",
+                        tabBarInactiveTintColor: "#fff"
                     }}
                 />
             </Tab.Navigator>
