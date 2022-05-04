@@ -67,6 +67,7 @@ export function generateHero() {
             "hp": setStat(heroClass.stats.hp, level, modifier),
             "might": setStat(heroClass.stats.might, level, modifier),
             "magic": setStat(heroClass.stats.magic, level, modifier)
-        }
+        },
+        "questing": false
     }
 }

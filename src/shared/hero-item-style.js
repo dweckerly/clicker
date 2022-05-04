@@ -48,7 +48,6 @@ export const styles = {
         marginTop: 22
       },
       modalView: {
-        margin: 20,
         backgroundColor: "#000",
         borderRadius: 20,
         padding: 35,

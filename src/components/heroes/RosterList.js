@@ -6,15 +6,16 @@ import RosterItem from "./RosterItem";
 import { sumOfRosterHeroes } from "../../hooks/util";
 
 const RosterList = () => {
-    const { roster } = useContext(AppContext);
+    const { nonQuestingHeroes } = useContext(AppContext);
+    const { questingHeroes } = useContext(AppContext);
     const viewHero = (index) => {
         console.log("Viewing hero " + roster[index].name);
     }
     return (
         <View>
-            <Text style={[whiteText, styles.costText]}>Daily Cost: {sumOfRosterHeroes(roster)}</Text>
+            <Text style={[whiteText, styles.costText]}>Daily Cost: {sumOfRosterHeroes([...nonQuestingHeroes, ...questingHeroes])}</Text>
             <FlatList 
-                data = {roster}
+                data = {[...nonQuestingHeroes, ...questingHeroes]}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({item, index}) => <RosterItem hero={item} handlePress={() => viewHero(index)}></RosterItem> }
                 showsVerticalScrollIndicator = {false}

@@ -1,16 +1,17 @@
 import { StyleSheet, View, Image, Text, Button, FlatList } from "react-native";
+import { useState, useContext } from "react";
 import { background, flex, whiteText } from "../../shared/styles";
 import Specials from "../../data/Specials";
-import QuestHeroAssign from "./QuestHeroAssign";
+import QuestHeroAssignModal from "./QuestHeroAssignModal";
+import { AppContext } from "../../../AppProvider";
 
-const QuestDetails = ({route, navigation}) => {
+const QuestDetails = ({route}) => {
     const { quest } = route.params;
-    const startQuest = () => {
-        // remove from available quests and add to active quests
-        navigation.navigate("QuestHeroAssign",  { quest: quest });
-    }
+    const { nonQuestingHeroes } = useContext(AppContext)
+    const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={[flex, background]}>
+            <QuestHeroAssignModal modalVisible={modalVisible} setModalVisible={setModalVisible} ></QuestHeroAssignModal>
             <View style={styles.container}>
                 <Image style={styles.image} source={quest.icon} />
                 <View style={styles.descContainer}>
@@ -43,12 +44,17 @@ const QuestDetails = ({route, navigation}) => {
                 </View>
             </View>
             <View style={styles.startBtnContainer}>
-                <Button 
-                    title="Accept Quest"
-                    onPress={() => startQuest() }
-                />
-            </View> 
-            <QuestHeroAssign quest={quest}></QuestHeroAssign>           
+                {
+                    nonQuestingHeroes.length > 0 ? 
+                    <Button 
+                        title="Assign Heroes"
+                        onPress={() => setModalVisible(true)}
+                    />
+                    :
+                    <Text style={whiteText}>No available heroes</Text>
+                }
+                
+            </View>    
         </View>
     );
 }

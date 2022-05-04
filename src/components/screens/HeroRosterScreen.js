@@ -5,22 +5,17 @@ import RosterList from "../heroes/RosterList";
 import { background, whiteText } from "../../shared/styles";
 
 const HeroRosterScreen = () => {
-    const ctx = useContext(AppContext);
-    if(ctx.roster.length > 0) {
-        return (
+    const { nonQuestingHeroes } = useContext(AppContext);
+    const { questingHeroes } = useContext(AppContext);
+    return [...nonQuestingHeroes, ...questingHeroes ].length > 0 ? 
             <View style={background}>
                 <RosterList></RosterList>
             </View>
-        );
-    } 
-    else {
-        return (
+            :
             <View style={[background, styles.container]}>
                 <Text style={[whiteText, styles.text]}>No Adventurers in your Guild.</Text>
                 <Text style={[whiteText, styles.text]}>Hire Adventurers from the Tavern.</Text>
             </View>
-        );
-    }
 }
 
 const styles = StyleSheet.create({

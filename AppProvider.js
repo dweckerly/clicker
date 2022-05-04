@@ -4,7 +4,8 @@ export const AppContext = createContext();
 const AppProvider = ({children}) => {
     const [gold, setGold] = useState(100);
     const [day, setDay] = useState(1);
-    const [roster, setRoster] = useState([]);
+    const [questingHeroes, setQuestingHeroes] = useState([]);
+    const [nonQuestingHeroes, setNonQuestingHeroes] = useState([]);
     const [availableHeroes, setAvailableHeroes] = useState([])
     const [availableQuests, setAvailableQuests] = useState([]);
     const [activeQuests, setActiveQuests] = useState([]);
@@ -25,14 +26,31 @@ const AppProvider = ({children}) => {
         setAvailableHeroes(heroArr.filter((el) => {
             return el.id != hero.id;
         }));
-        let newRoster = [...roster];
+        let newRoster = [...nonQuestingHeroes];
         newRoster.push(hero);
-        setRoster(newRoster);
+        setNonQuestingHeroes(newRoster);
+    }
+
+    const addQuestingHero = (hero) => {
+        let heroArr = [...nonQuestingHeroes];
+        setAvailableHeroes(heroArr.filter((el) => {
+            return el.id != hero.id;
+        }));
+        let newRoster = [...questingHeroes];
+        newRoster.push(hero);
+        setQuestingHeroes(newRoster);
     }
 
     const removeFromRoster = (hero) => {
-        let newRoster = [...roster];
-        setRoster(newRoster.filter((el) => {
+        let newRoster = [...nonQuestingHeroes];
+        setNonQuestingHeroes(newRoster.filter((el) => {
+            return el.id != hero.id;
+        }));
+    }
+
+    const removeFromQuesting = (hero) => {
+        let newRoster = [...questingHeroes];
+        setQuestingHeroes(newRoster.filter((el) => {
             return el.id != hero.id;
         }));
     }
@@ -74,9 +92,12 @@ const AppProvider = ({children}) => {
         updateGold,
         day: day,
         increaseDay,
-        roster: roster,
+        questingHeroes: questingHeroes,
         addToRoster,
         removeFromRoster,
+        nonQuestingHeroes: nonQuestingHeroes,
+        addQuestingHero,
+        removeFromQuesting,
         availableHeroes: availableHeroes,
         setAvailableHeroes,
         availableQuests: availableQuests,
