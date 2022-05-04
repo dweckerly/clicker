@@ -4,7 +4,7 @@ import { AppContext } from "../../../AppProvider"
 import { background, flex, whiteText } from "../../shared/styles";
 import QuestHeroAssignItem from "./QuestHeroAssignItem";
 
-export default QuestHeroAssign = ({quest}) => {
+const QuestHeroAssign = ({quest}) => {
     const { roster } = useContext(AppContext);
     const [ assignedHeroes, setAssignedHeroes ] = useState([]);
     const [ unAssignedHeroes, setUnassignedHeroes ] = useState([]);
@@ -117,3 +117,5 @@ const styles = StyleSheet.create({
         fontSize: 20
     }
 });
+
+export default QuestHeroAssign;

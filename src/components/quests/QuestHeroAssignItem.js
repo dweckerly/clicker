@@ -3,7 +3,7 @@ import { styles } from "../../shared/hero-item-style";
 import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
 
-export default QuestHeroAssignItem = ({hero, handlePress}) => {
+const QuestHeroAssignItem = ({hero, handlePress}) => {
     return (
         <View>
             <TouchableOpacity 
@@ -36,3 +36,5 @@ export default QuestHeroAssignItem = ({hero, handlePress}) => {
         </View>
     );
 }
+
+export default QuestHeroAssignItem;

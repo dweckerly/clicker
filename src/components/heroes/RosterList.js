@@ -5,7 +5,7 @@ import { whiteText } from "../../shared/styles";
 import RosterItem from "./RosterItem";
 import { sumOfRosterHeroes } from "../../hooks/util";
 
-export default RosterList = () => {
+const RosterList = () => {
     const { roster } = useContext(AppContext);
     const viewHero = (index) => {
         console.log("Viewing hero " + roster[index].name);
@@ -30,3 +30,5 @@ const styles = {
         alignSelf: "center"
     }
 }
+
+export default RosterList;

@@ -4,7 +4,7 @@ import { AppContext } from "../../../AppProvider";
 import RosterList from "../heroes/RosterList";
 import { background, whiteText } from "../../shared/styles";
 
-export default HeroRosterScreen = () => {
+const HeroRosterScreen = () => {
     const ctx = useContext(AppContext);
     if(ctx.roster.length > 0) {
         return (
@@ -33,4 +33,5 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 30
     }
-}) 
+})
+export default HeroRosterScreen;

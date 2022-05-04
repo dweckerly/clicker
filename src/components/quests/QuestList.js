@@ -3,7 +3,7 @@ import { View, FlatList } from "react-native";
 import { AppContext } from "../../../AppProvider";
 import QuestItem from "./QuestItem";
 
-export default QuestList = ({navigation}) => {
+const QuestList = ({navigation}) => {
     const { availableQuests } = useContext(AppContext);
     return (
         <View>
@@ -16,3 +16,5 @@ export default QuestList = ({navigation}) => {
         </View>
     );
 }
+
+export default QuestList;

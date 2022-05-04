@@ -5,7 +5,7 @@ import { styles } from "../../shared/hero-item-style";
 import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
 
-export default HeroHireModal = ({ modalVisible, setModalVisible, hero }) => {
+const HeroHireModal = ({ modalVisible, setModalVisible, hero }) => {
     const { addToRoster } = useContext(AppContext);
     return (
         <Modal
@@ -40,3 +40,5 @@ export default HeroHireModal = ({ modalVisible, setModalVisible, hero }) => {
         </Modal>
     );
 }
+
+export default HeroHireModal;

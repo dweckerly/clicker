@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { AppContext } from "../../AppProvider"
 import { whiteText } from "../shared/styles";
 
-export default Header = () => {
+const Header = () => {
     const { gold, day } = useContext(AppContext)
     const nextDay = () => {
 
@@ -66,4 +66,5 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 10
     }
-})
+});
+export default Header;

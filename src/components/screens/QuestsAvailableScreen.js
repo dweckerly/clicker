@@ -7,7 +7,7 @@ import QuestHeroAssign from "../quests/QuestHeroAssign";
 
 const Stack = createNativeStackNavigator();
 
-export default QuestsAvailableScreen = () => {
+const QuestsAvailableScreen = () => {
     return (
         <NavigationContainer
             independent={true}
@@ -44,3 +44,5 @@ const styles = StyleSheet.create({
       color: "#fff"
     }
   });
+
+  export default QuestsAvailableScreen;

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import HeroItem from "./HeroItem";
 import { AppContext } from "../../../AppProvider";
 
-export default HeroHireList = () => {
+const HeroHireList = () => {
     const { availableHeroes } = useContext(AppContext);
     return (
         <View>
@@ -16,3 +16,4 @@ export default HeroHireList = () => {
         </View>
     );
 }
+export default HeroHireList;

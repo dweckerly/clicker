@@ -7,7 +7,7 @@ import { whiteText } from "../../shared/styles"
 import { styles } from "../../shared/hero-item-style";
 import HeroHireModal from "./HeroHireModal";
 
-export default HeroItem = ({hero}) => {
+const HeroItem = ({hero}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View>
@@ -44,4 +44,6 @@ export default HeroItem = ({hero}) => {
         </View>        
     );
 }
+
+export default HeroItem;
 

@@ -17,7 +17,7 @@ import { generateHeroes } from '../hooks/generateHeroes';
 
 const Tab = createBottomTabNavigator();
 
-export default Game = () => {
+const Game = () => {
     const { setAvailableQuests, setAvailableHeroes } = useContext(AppContext);
     useEffect(() => {
         setAvailableQuests(generateQuestList(5));
@@ -85,3 +85,5 @@ export default Game = () => {
       </NavigationContainer>
     );
 }
+
+export default Game;

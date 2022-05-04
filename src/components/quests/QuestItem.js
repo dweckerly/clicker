@@ -1,7 +1,7 @@
 import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { whiteText } from "../../shared/styles";
 
-export default QuestItem = ({quest, navigation}) => {
+const QuestItem = ({quest, navigation}) => {
     return (
         <TouchableOpacity 
             style={styles.container}
@@ -79,3 +79,6 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
 });
+
+
+export default QuestItem;

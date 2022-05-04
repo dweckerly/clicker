@@ -5,7 +5,7 @@ import QuestList from "../quests/QuestList";
 import { background, flex, whiteText } from "../../shared/styles";
 import { AppContext } from "../../../AppProvider";
 
-export default QuestsAactiveScreen = () => {
+const QuestsActiveScreen = () => {
     const ctx = useContext(AppContext);
     if(ctx.activeQuests.length > 0) {
         return (
@@ -23,6 +23,7 @@ export default QuestsAactiveScreen = () => {
         );
     }
 }
+export default QuestsActiveScreen;
 
 const styles = StyleSheet.create({
     container: {

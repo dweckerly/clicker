@@ -3,7 +3,7 @@ import { background, flex, whiteText } from "../../shared/styles";
 import Specials from "../../data/Specials";
 import QuestHeroAssign from "./QuestHeroAssign";
 
-export default QuestDetails = ({route, navigation}) => {
+const QuestDetails = ({route, navigation}) => {
     const { quest } = route.params;
     const startQuest = () => {
         // remove from available quests and add to active quests
@@ -108,3 +108,5 @@ const styles = StyleSheet.create({
         margin: 10
     }
 })
+
+export default QuestDetails;
