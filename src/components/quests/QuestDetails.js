@@ -47,11 +47,14 @@ const QuestDetails = ({route}) => {
                 {
                     nonQuestingHeroes.length > 0 ? 
                     <Button 
-                        title="Assign Heroes"
+                        title="Assign Adventurers"
                         onPress={() => setModalVisible(true)}
                     />
                     :
-                    <Text style={whiteText}>No available heroes</Text>
+                    <View style={styles.emptyContainer}>
+                        <Text style={[whiteText, styles.text]}>No Adventurers to assign.</Text>
+                        <Text style={[whiteText, styles.text]}>Hire Adventurers from the Tavern.</Text>
+                    </View>
                 }
                 
             </View>    
@@ -112,6 +115,9 @@ const styles = StyleSheet.create({
     },
     startBtnContainer: {
         margin: 10
+    },
+    emptyContainer: {
+        alignItems: "center"
     }
 })
 
