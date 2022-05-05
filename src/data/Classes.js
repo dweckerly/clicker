@@ -24,10 +24,7 @@ const Classes = [
             'might': 6,
             'magic': 0
         },
-        'special': {
-            'name': 'Rage',
-            'description': ''
-        },
+        'special': ["rage"],
     },
     {
         'name': 'Dwarf',
@@ -50,10 +47,7 @@ const Classes = [
             'might': 4,
             'magic': 1
         },
-        'special': {
-            'name': 'Subterranean',
-            'description': 'Highly skilled in navigating underground.'
-        },
+        'special': ["subterranean"],
     },
     {
         'name': 'Elf',
@@ -80,10 +74,7 @@ const Classes = [
             'might': 4,
             'magic': 4
         },
-        'special': {
-            'name': '',
-            'description': ''
-        },
+        'special': ["holy"],
     },
     {
         'name': 'Knight',
@@ -106,10 +97,7 @@ const Classes = [
             'might': 5,
             'magic': 1
         },
-        'special': {
-            'name': '',
-            'description': ''
-        },
+        'special': ["protector"],
     },
     {
         'name': 'Monk',
@@ -128,10 +116,7 @@ const Classes = [
             'might': 3,
             'magic': 3
         },
-        'special': {
-            'name': 'Holy',
-            'description': 'Adept at dealing with undead foes.'
-        },
+        'special': ["holy", "protector"],
     },
     {
         'name': 'Nun',
@@ -150,10 +135,7 @@ const Classes = [
             'might': 3,
             'magic': 4
         },
-        'special': {
-            'name': 'Holy',
-            'description': 'Adept at dealing with undead foes.'
-        },
+        'special': ["holy", "protector"],
     },
     {
         'name': 'Witch',
@@ -176,10 +158,7 @@ const Classes = [
             'might': 1,
             'magic': 6
         },
-        'special': {
-            'name': '',
-            'description': ''
-        },
+        'special': ["arcane"],
     },
     {
         'name': 'Wizard',
@@ -206,10 +185,7 @@ const Classes = [
             'might': 2,
             'magic': 6
         },
-        'special': {
-            'name': '',
-            'description': ''
-        },
+        'special': ["arcane"],
     },
 ]
 

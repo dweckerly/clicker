@@ -25,7 +25,7 @@ const Quests = [
     },
     {
         'name': 'Elusive Sea Monster',
-        'description': 'A secretive sea monster is plaguing a quite little port town.',
+        'description': 'A secretive sea monster is plaguing a quiet little port town.',
         'icon': require('../assets/icons/quests/sea-monster.png'),
         'requirements': {
             'might': 6,

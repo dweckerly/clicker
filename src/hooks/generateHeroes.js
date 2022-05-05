@@ -2,6 +2,7 @@ import uuid from "react-native-uuid";
 
 import Classes from "../data/Classes";
 import Names from "../data/Names";
+import Specials from "../data/Specials";
 
 import { getRandomInt, getRandomFloat } from './util';
   
@@ -43,6 +44,10 @@ function setStat(stat, level, mod) {
     return Math.round(newStat * getRandomFloat(baseRandom.min + mod, baseRandom.max + mod,  3))
 }
 
+function setSpecial(specials) {
+    return specials[getRandomInt(specials.length)];
+}
+
 export function generateHeroes(max) {
     let heroArr = []
     for(let i = 0; i < max; i++) {
@@ -68,6 +73,6 @@ export function generateHero() {
             "might": setStat(heroClass.stats.might, level, modifier),
             "magic": setStat(heroClass.stats.magic, level, modifier)
         },
-        "questing": false
+        "special": Specials[setSpecial(heroClass.special)]
     }
 }
