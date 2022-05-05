@@ -29,6 +29,16 @@ const Specials = {
         "icon": require("../assets/icons/classes/special/heart-shield.png"),
         "description": "Will give up own life for other party members."
     },
+    "pathfinder": {
+        "name": "Pathfinder",
+        "icon": require("../assets/icons/classes/special/forest.png"),
+        "description": "Highly skilled in navigating wilderness."
+    },
+    "naturalist": {
+        "name": "Naturalist",
+        "icon": require("../assets/icons/classes/special/fruiting.png"),
+        "description": "Increases the rewards from wilderness quests."
+    },
 }
 
 export default Specials;

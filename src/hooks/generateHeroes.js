@@ -73,6 +73,6 @@ export function generateHero() {
             "might": setStat(heroClass.stats.might, level, modifier),
             "magic": setStat(heroClass.stats.magic, level, modifier)
         },
-        "special": Specials[setSpecial(heroClass.special)]
+        "special": setSpecial(heroClass.special)
     }
 }

@@ -74,7 +74,7 @@ const Classes = [
             'might': 4,
             'magic': 4
         },
-        'special': ["holy"],
+        'special': ["pathfinder", "naturalist"],
     },
     {
         'name': 'Knight',
