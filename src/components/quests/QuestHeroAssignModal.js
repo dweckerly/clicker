@@ -4,6 +4,7 @@ import { AppContext } from "../../../AppProvider"
 import { styles } from "../../shared/hero-item-style";
 import { whiteText } from "../../shared/styles";
 import QuestHeroAssignItem from "./QuestHeroAssignItem";
+import Specials from "../../data/Specials";
 
 const QuestHeroAssignModal = ({ modalVisible, setModalVisible, quest }) => {
     const window = useWindowDimensions();
@@ -11,52 +12,58 @@ const QuestHeroAssignModal = ({ modalVisible, setModalVisible, quest }) => {
     const [selectedHeroes, setselectedHeroes] = useState([]);
     return (
         <Modal
-            style={{margin: 0}}
             animationType="slide"
             transparent={true}
             visible={modalVisible}
             onRequestClose={ () => setModalVisible(!modalVisible) }
         >
-                <View style={[style.modalView, {width: window.width - 20}]}>
-                    <View style={style.stats}>
-                        <View style={style.stat}>
-                            <Image style={style.uiImage} source={require("../../assets/icons/ui/strong.png")}/>
-                            <Text style={[whiteText, style.statText]}>{quest.requirements.might}</Text>
-                        </View>
-                        <View style={style.stat}>
-                            <Image style={style.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")}/>
-                            <Text style={[whiteText, style.statText]}>{quest.requirements.magic}</Text>
-                        </View>
-                        <View style={style.stat}>
-                            <Image style={style.uiImage} source={require("../../assets/icons/ui/sands-of-time.png")}/>
-                            <Text style={[whiteText, style.statText]}>{quest.time}</Text>
-                        </View>
-                        <View style={style.stat}>
-                            <Image style={style.uiImage} source={require("../../assets/icons/ui/two-coins.png")}/>
-                            <Text style={[whiteText, style.statText]}>{quest.reward}</Text>
-                        </View>
+            <View style={[style.modalView, {width: window.width - 20}]}>
+                <FlatList 
+                    data = {nonQuestingHeroes}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item, index}) => <QuestHeroAssignItem hero={item} handlePress={() => viewHero(index)}></QuestHeroAssignItem> }
+                    showsVerticalScrollIndicator = {false}
+                />
+                <View style={style.stats}>
+                    <View style={style.stat}>
+                        <Image style={style.uiImage} source={require("../../assets/icons/ui/strong.png")}/>
+                        <Text style={[whiteText, style.statText]}>{quest.requirements.might}</Text>
                     </View>
-                    <FlatList 
-                        data = {nonQuestingHeroes}
-                        keyExtractor={(item, index) => index.toString()}
-                        renderItem={({item, index}) => <QuestHeroAssignItem hero={item} handlePress={() => viewHero(index)}></QuestHeroAssignItem> }
-                        showsVerticalScrollIndicator = {false}
-                    />
-                    <View style={style.btnContainer}>
-                        <Button 
-                            disabled={selectedHeroes.length > 0 ? false : true}
-                            title="Accept"
-                            onPress={() => setModalVisible(!modalVisible)}
-                        />
-                        <Pressable
-                            style={[styles.button, styles.buttonClose]}
-                            onPress={() => setModalVisible(!modalVisible)}
-                        >
-                            <Text style={styles.textStyle}>Cancel</Text>
-                        </Pressable>
+                    <View style={style.stat}>
+                        <Image style={style.uiImage} source={require("../../assets/icons/ui/magic-swirl.png")}/>
+                        <Text style={[whiteText, style.statText]}>{quest.requirements.magic}</Text>
+                    </View>
+                    <View style={style.stat}>
+                        <Image style={style.uiImage} source={require("../../assets/icons/ui/sands-of-time.png")}/>
+                        <Text style={[whiteText, style.statText]}>{quest.time}</Text>
+                    </View>
+                    <View style={style.stat}>
+                        <Image style={style.uiImage} source={require("../../assets/icons/ui/two-coins.png")}/>
+                        <Text style={[whiteText, style.statText]}>{quest.reward}</Text>
                     </View>
                     
-                </View>                          
+                </View>
+                <FlatList 
+                    data = {quest.requirements.special}
+                    keyExtractor={(item, index) => index.toString()}
+                    renderItem={({item}) => <Image style={style.uiImage} source={Specials[item].icon}/>}
+                    horizontal
+                    showsHorizontalScrollIndicator = {false}
+                />
+                <View style={style.btnContainer}>
+                    <Button 
+                        disabled={selectedHeroes.length > 0 ? false : true}
+                        title="Accept"
+                        onPress={() => setModalVisible(!modalVisible)}
+                    />
+                    <Pressable
+                        style={[styles.button, styles.buttonClose]}
+                        onPress={() => setModalVisible(!modalVisible)}
+                    >
+                        <Text style={styles.textStyle}>Cancel</Text>
+                    </Pressable>
+                </View>                    
+            </View>                          
         </Modal>
     );
 }
@@ -80,12 +87,12 @@ const style = StyleSheet.create({
         marginRight: 10,
         borderRadius: 10,
         flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center"
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     stat: {
         flexDirection: "row",
-        marginRight: 20
+        marginRight: 20,
     },
     statText: {
       fontSize: 16  

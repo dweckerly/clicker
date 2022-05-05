@@ -2,6 +2,7 @@ import { Image, View, Text, TouchableOpacity, useWindowDimensions } from "react-
 import { useState } from "react";
 import { whiteText } from "../../shared/styles";
 import Classes from "../../data/Classes";
+import Specials from "../../data/Specials";
 
 const QuestHeroAssignItem = ({hero, handlePress}) => {
     const window = useWindowDimensions();
@@ -36,6 +37,7 @@ const QuestHeroAssignItem = ({hero, handlePress}) => {
                         </View>                                                           
                     </View>                                        
                 </View>  
+                <Image style={styles.image} source={Specials[hero.special].icon} /> 
             </TouchableOpacity>
         </View>
     );
