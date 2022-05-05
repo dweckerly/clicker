@@ -11,7 +11,7 @@ const QuestDetails = ({route}) => {
     const [modalVisible, setModalVisible] = useState(false);
     return (
         <View style={[flex, background]}>
-            <QuestHeroAssignModal modalVisible={modalVisible} setModalVisible={setModalVisible} ></QuestHeroAssignModal>
+            <QuestHeroAssignModal modalVisible={modalVisible} setModalVisible={setModalVisible} quest={quest} ></QuestHeroAssignModal>
             <View style={styles.container}>
                 <Image style={styles.image} source={quest.icon} />
                 <View style={styles.descContainer}>
@@ -52,8 +52,8 @@ const QuestDetails = ({route}) => {
                     />
                     :
                     <View style={styles.emptyContainer}>
-                        <Text style={[whiteText, styles.text]}>No Adventurers to assign.</Text>
-                        <Text style={[whiteText, styles.text]}>Hire Adventurers from the Tavern.</Text>
+                        <Text style={[whiteText, styles.emptyText]}>No Adventurers to assign.</Text>
+                        <Text style={[whiteText, styles.emptyText]}>Hire Adventurers from the Tavern.</Text>
                     </View>
                 }
                 
@@ -118,6 +118,9 @@ const styles = StyleSheet.create({
     },
     emptyContainer: {
         alignItems: "center"
+    },
+    emptyText: {
+        fontSize: 22
     }
 })
 
